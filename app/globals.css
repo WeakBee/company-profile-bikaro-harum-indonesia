@@ -7,6 +7,10 @@
   --text: #06246C;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--text);
   background: var(--background);
@@ -19,4 +23,49 @@ body {
 }
 .nautigal {
   font-family: 'The Nautigal', cursive;
+}
+
+.marquee {
+  width: 100%;
+  height: 12rem;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.marquee__inner-wrap {
+  height: 100%;
+  width: 100%;
+}
+
+.marquee__inner {
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+  position: relative;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee__inner_2 {
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+  position: relative;
+  left: -150%;
+  animation: marquee2 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee2 {
+  to {
+    transform: translateX(50%);
+  }
 }

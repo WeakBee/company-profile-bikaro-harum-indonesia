@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { M_PLUS_1 } from "next/font/google";
+import Footer from "./components/Footer";
 
 // Import font M PLUS 1
 const mPlus1 = M_PLUS_1({
   subsets: ["latin"], // Gunakan subset Latin
-  weight: ["400", "500", "700"], // Sesuaikan dengan bobot yang diinginkan
+  weight: ["400", "500","600", "700"], // Sesuaikan dengan bobot yang diinginkan
 });
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
         <div>
           <Navbar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

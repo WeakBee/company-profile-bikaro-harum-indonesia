@@ -1,19 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Pantau scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 650) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar absolute left-0 top-0 w-full py-7 z-10">
-      <div className="container mx-auto px-10 flex justify-between items-center">
+    <nav
+      className={`navbar fixed left-0 top-0 w-full py-4 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/50 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40' : 'bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto px-5 xl:px-20 flex justify-between items-center">
         {/* Gambar Logo */}
         <div className="logo">
           <Link href="/">
@@ -23,15 +45,15 @@ const Navbar = () => {
               width={1280} // Lebar gambar
               height={80} // Tinggi gambar
               priority
-              className='w-80'
+              className="w-80"
             />
           </Link>
         </div>
         <div className={`menu flex gap-10 ${isMobileMenuOpen ? 'open' : ''}`}>
-          <Link href="/">Home</Link>
-          <Link href="/about">Produk</Link>
-          <Link href="/services">Tentang Kami</Link>
-          <Link href="/contact">Daftar Distributor</Link>
+          <Link href="/" className='hover:underline'>Home</Link>
+          <Link href="/" className='hover:underline'>Produk</Link>
+          <Link href="/" className='hover:underline'>Tentang Kami</Link>
+          <Link href="/" className='hover:underline'>Daftar Distributor</Link>
         </div>
         <button className="mobile-menu-button" onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? 'Close' : 'Menu'}
@@ -41,7 +63,7 @@ const Navbar = () => {
         .mobile-menu-button {
           display: none;
           background: none;
-          color: white;
+          color: black;
           border: none;
           font-size: 1rem;
           cursor: pointer;
