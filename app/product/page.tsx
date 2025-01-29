@@ -12,19 +12,19 @@ const categories = [
 ];
 
 const products = [
-  { name: 'Sexy Red', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sexy_red.png' },
-  { name: 'Sweet Secret', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sweet_secret.png' },
-  { name: 'Blue Fantasy', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/blue_fantasy.png' },
-  { name: 'Sakura', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sakura.png' },
-  { name: 'Soft Baby', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/soft_baby.png' },
-  { name: 'Aurora', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/aurora.png' },
-  { name: 'Philly', category: 'detergent', categoryname:'Detergent', categorycolor: '#5CF653', image: '/assets/product/philly.png' },
-  { name: 'Lovely', category: 'detergent', categoryname:'Detergent', categorycolor: '#5CF653', image: '/assets/product/lovely.png' },
-  { name: 'Silky', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/silky.png' },
-  { name: 'Delicate Blue', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/delicate_blue.png' },
-  { name: 'Fluffy Pink', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/fluffy_pink.png' },
-  { name: 'Lemon Scent', category: 'sabun', categoryname:'Sabun Cuci Piring', categorycolor: '#F75858', image: '/assets/product/lemon_scent.png' },
-  { name: 'Lime Sans', category: 'sabun', categoryname:'Sabun Cuci Piring', categorycolor: '#F75858', image: '/assets/product/lime_sans.png' },
+  { name: 'Sexy Red', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sexy_red.webp' },
+  { name: 'Sweet Secret', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sweet_secret.webp' },
+  { name: 'Blue Fantasy', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/blue_fantasy.webp' },
+  { name: 'Sakura', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sakura.webp' },
+  { name: 'Soft Baby', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/soft_baby.webp' },
+  { name: 'Aurora', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/aurora.webp' },
+  { name: 'Philly', category: 'detergent', categoryname:'Detergent', categorycolor: '#5CF653', image: '/assets/product/philly.webp' },
+  { name: 'Lovely', category: 'detergent', categoryname:'Detergent', categorycolor: '#5CF653', image: '/assets/product/lovely.webp' },
+  { name: 'Silky', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/silky.webp' },
+  { name: 'Delicate Blue', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/delicate_blue.webp' },
+  { name: 'Fluffy Pink', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/fluffy_pink.webp' },
+  { name: 'Lemon Scent', category: 'sabun', categoryname:'Sabun Cuci Piring', categorycolor: '#F75858', image: '/assets/product/lemon_scent.webp' },
+  { name: 'Lime Sans', category: 'sabun', categoryname:'Sabun Cuci Piring', categorycolor: '#F75858', image: '/assets/product/lime_sans.webp' },
 ];
 
 export default function Product() {
