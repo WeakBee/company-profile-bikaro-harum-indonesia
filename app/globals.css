@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
   --text: #06246C;
 }
 
@@ -13,7 +12,6 @@ html {
 
 body {
   color: var(--text);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -53,7 +51,7 @@ body {
   align-items: center;
   display: flex;
   position: relative;
-  left: -150%;
+  left: -300%;
   animation: marquee2 40s linear infinite;
   will-change: transform;
 }
@@ -67,5 +65,11 @@ body {
 @keyframes marquee2 {
   to {
     transform: translateX(50%);
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
   }
 }

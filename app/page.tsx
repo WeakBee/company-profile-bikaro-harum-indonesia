@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Draggable } from "gsap/Draggable";
 import { The_Nautigal } from "next/font/google";
 import Link from "next/link";
 
@@ -13,189 +14,229 @@ const theNautigal = The_Nautigal({
   weight: ["700"], // Atur bobot font yang ingin digunakan
 });
 
-const HeroAnimation = () => {
+const AllAnimation = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
+      const ctx = gsap.context(() => {
+        // Reset ScrollTrigger sebelum membuat animasi baru
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        gsap.registerPlugin(ScrollTrigger, Draggable);
+        gsap.registerEffect({
+          name: "counter",
+          extendTimeline: true,
+          defaults: {
+            end: 0,
+            duration: 0.5,
+            ease: "power1",
+            increment: 1,
+            scrollTrigger: null, // Default to null
+          },
+          effect: (targets: gsap.TweenTarget, config: { duration: number; end: number; increment: number; ease: string; scrollTrigger?: ScrollTrigger }) => {
+            const tl = gsap.timeline({
+              scrollTrigger: config.scrollTrigger || undefined, // Attach ScrollTrigger if provided
+            });
 
-      gsap.registerEffect({
-        name: "counter",
-        extendTimeline: true,
-        defaults: {
-          end: 0,
-          duration: 0.5,
-          ease: "power1",
-          increment: 1,
-          scrollTrigger: null, // Default to null
-        },
-        effect: (targets: gsap.TweenTarget, config: { duration: number; end: number; increment: number; ease: string; scrollTrigger?: ScrollTrigger }) => {
-          const tl = gsap.timeline({
-            scrollTrigger: config.scrollTrigger || undefined, // Attach ScrollTrigger if provided
-          });
+            const element = targets as HTMLElement;
 
-          const element = targets as HTMLElement;
+            // Parse the initial number from the element's innerText
+            const num = element.innerText;
+            element.innerText = num;
 
-          // Parse the initial number from the element's innerText
-          const num = element.innerText;
-          element.innerText = num;
-
-          tl.to(
-            targets,
-            {
-              duration: config.duration,
-              innerText: config.end,
-              modifiers: {
-                innerText: (innerText: string) => {
-                  return gsap.utils.snap(config.increment, parseFloat(innerText))
-                    .toFixed(0) // Ensure it's an integer
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Format with commas
+            tl.to(
+              targets,
+              {
+                duration: config.duration,
+                innerText: config.end,
+                modifiers: {
+                  innerText: (innerText: string) => {
+                    return gsap.utils.snap(config.increment, parseFloat(innerText))
+                      .toFixed(0) // Ensure it's an integer
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Format with commas
+                  },
                 },
+                ease: config.ease,
               },
-              ease: config.ease,
-            },
-            0
-          );
+              0
+            );
 
-          return tl;
-        },
-      });
-      
-      gsap.to(".parallax-hero", {
-        scale: 1.1, 
-        y: 300, 
-        delay:5, 
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-      gsap.from(".parallax-motto-1", {
-        x: -250, 
-        opacity:0, 
-        rotate: 180,
-        yoyo: true,
-        duration:1.1,
-        scrollTrigger: {
-          trigger: "#motto",
-          start: "70% bottom",
-          end: "70% bottom",
-          toggleActions: "restart none reset reset"
-        }
-      });
-      gsap.from(".parallax-motto-2", {
-        x: 250, 
-        opacity:0, 
-        rotate: 180,
-        yoyo: true,
-        duration:1.1,
-        scrollTrigger: {
-          trigger: "#motto",
-          start: "20% 80%",
-          end: "20% 80%",
-          toggleActions: "restart none reset reset"
-        }
-      });
-      gsap.from(".image-scale-animation-1", {
-        scale:1.5,
-        duration:1.3,
-        scrollTrigger: {
-          trigger: ".image-scale-animation-1",
-          start: "top 80%",
-          end: "top 80%",
-          toggleActions: "restart none reset reset",
-        }
-      });
-      gsap.from(".text-aos-animation-1", {
-        y:100,
-        opacity:0, 
-        duration:1.3,
-        scrollTrigger: {
-          trigger: ".text-aos-animation-1",
-          start: "top 80%",
-          end: "top 80%",
-          toggleActions: "restart none reset reset",
-        }
-      });
-      gsap.from(".image-scale-animation-2", {
-        scale:1.5,
-        duration:1.3,
-        scrollTrigger: {
-          trigger: ".image-scale-animation-2",
-          start: "top 80%",
-          end: "top 80%",
-          toggleActions: "restart none reset reset",
-        }
-      });
-      gsap.from(".image-scale-animation-3", {
-        scale:1.5,
-        duration:1.3,
-        scrollTrigger: {
-          trigger: ".image-scale-animation-3",
-          start: "top 80%",
-          end: "top 80%",
-          toggleActions: "restart none reset reset",
-        }
-      });
-      gsap.from(".image-scale-animation-4", {
-        scale:1.5,
-        duration:1.3,
-        scrollTrigger: {
-          trigger: ".image-scale-animation-4",
-          start: "top 80%",
-          end: "top 80%",
-          toggleActions: "restart none reset reset",
-        }
-      });
-      gsap.from(".text-aos-animation-2", {
-        y:100,
-        opacity:0, 
-        duration:1.3,
-        scrollTrigger: {
-          trigger: ".text-aos-animation-2",
-          start: "top 80%",
-          end: "top 80%",
-          toggleActions: "restart none reset reset",
-        }
-      });
-      gsap.from(".text-aos-animation-3", {
-        y:100,
-        opacity:0, 
-        duration:1.3,
-        scrollTrigger: {
-          trigger: ".text-aos-animation-3",
-          start: "top 70%",
-          end: "top 70%",
-          toggleActions: "restart none reset reset",
-        }
-      });        
+            return tl;
+          },
+        });
+        
+        gsap.to(".parallax-hero", {
+          scale: 1.1, 
+          y: 300, 
+          delay:5, 
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+        gsap.from(".parallax-motto-1", {
+          x: -250, 
+          opacity:0, 
+          rotate: 180,
+          yoyo: true,
+          duration:1.1,
+          scrollTrigger: {
+            trigger: "#motto",
+            start: "70% bottom",
+            end: "70% bottom",
+            toggleActions: "restart none reset reset"
+          }
+        });
+        gsap.from(".parallax-motto-2", {
+          x: 250, 
+          opacity:0, 
+          rotate: 180,
+          yoyo: true,
+          duration:1.1,
+          scrollTrigger: {
+            trigger: "#motto",
+            start: "20% 80%",
+            end: "20% 80%",
+            toggleActions: "restart none reset reset"
+          }
+        });
+        gsap.from(".image-scale-animation-1", {
+          scale:1.5,
+          duration:1.3,
+          scrollTrigger: {
+            trigger: ".image-scale-animation-1",
+            start: "top 80%",
+            end: "top 80%",
+            toggleActions: "restart none reset reset",
+          }
+        });
+        gsap.from(".text-aos-animation-1", {
+          y:100,
+          opacity:0, 
+          duration:1.3,
+          scrollTrigger: {
+            trigger: ".text-aos-animation-1",
+            start: "top 80%",
+            end: "top 80%",
+            toggleActions: "restart none reset reset",
+          }
+        });
+        gsap.from(".image-scale-animation-2", {
+          scale:1.5,
+          duration:1.3,
+          scrollTrigger: {
+            trigger: ".image-scale-animation-2",
+            start: "top 80%",
+            end: "top 80%",
+            toggleActions: "restart none reset reset",
+          }
+        });
+        gsap.from(".image-scale-animation-3", {
+          scale:1.5,
+          duration:1.3,
+          scrollTrigger: {
+            trigger: ".image-scale-animation-3",
+            start: "top 80%",
+            end: "top 80%",
+            toggleActions: "restart none reset reset",
+          }
+        });
+        gsap.from(".image-scale-animation-4", {
+          scale:1.5,
+          duration:1.3,
+          scrollTrigger: {
+            trigger: ".image-scale-animation-4",
+            start: "top 80%",
+            end: "top 80%",
+            toggleActions: "restart none reset reset",
+          }
+        });
+        gsap.from(".text-aos-animation-2", {
+          y:100,
+          opacity:0, 
+          duration:1.3,
+          scrollTrigger: {
+            trigger: ".text-aos-animation-2",
+            start: "top 80%",
+            end: "top 80%",
+            toggleActions: "restart none reset reset",
+          }
+        });
+        gsap.from(".text-aos-animation-3", {
+          y:100,
+          opacity:0, 
+          duration:1.3,
+          scrollTrigger: {
+            trigger: ".text-aos-animation-3",
+            start: "top 70%",
+            end: "top 70%",
+            toggleActions: "restart none reset reset",
+          }
+        });        
+        gsap.effects.counter(".moving-number", {
+          end: 600000,
+          duration: 2,
+          increment: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: "#produk-terjual",
+            start: "top 70%",
+            end: "top 70%",
+            toggleActions: "restart none reset reset",
+          }
+        });          
+        gsap.from(".group-gelembung-1", {
+          y: 200, 
+          scrollTrigger: {
+            trigger: "#produk-kami",
+            start: "30% bottom",
+            end: "110% bottom",
+            scrub: true
+          }
+        });       
+        gsap.from(".group-gelembung-2", {
+          y: 200, 
+          scrollTrigger: {
+            trigger: "#produk-kami",
+            start: "65% bottom",
+            end: "140% bottom",
+            scrub: true
+          }
+        });       
+        gsap.from(".group-gelembung-3", {
+          y: 200, 
+          scrollTrigger: {
+            trigger: "#produk-kami",
+            start: "65% bottom",
+            end: "140% bottom",
+            scrub: true
+          }
+        });
+        gsap.from(".parallax-peta", {
+          scale: 1.4,
+          y: -50, 
+          rotate:-10,
+          duration:1.4,
+          scrollTrigger: {
+            trigger: "#produk-terjual",
+            start: "top bottom",
+            end: "top bottom",
+            toggleActions: "restart none reset reset",
+          }
+        });
+        Draggable.create(".draggable-slide", {
+          type: "x",
+          bounds: ".draggable-container"
+        });
 
-      gsap.effects.counter(".moving-number", {
-        end: 600000,
-        duration: 2,
-        increment: 1,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: "#produk-terjual",
-          start: "top 70%",
-          end: "top 70%",
-          toggleActions: "restart none reset reset",
-        }
-      });     
-      
-      gsap.from(".parallax-peta", {
-        scale: 1.4,
-        y: -50, 
-        rotate:-10,
-        duration:1.4,
-        scrollTrigger: {
-          trigger: "#produk-terjual",
-          start: "top bottom",
-          end: "top bottom",
-          toggleActions: "restart none reset reset",
-        }
+        // Refresh ScrollTrigger setelah membuat animasi baru
+        ScrollTrigger.refresh();
       });
+
+      return () => {
+        ctx.revert(); // Bersihkan animasi saat komponen di-unmount
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Hapus semua ScrollTrigger
+      };
     }
   }, []);
 
@@ -204,28 +245,46 @@ const HeroAnimation = () => {
 
 const cards = [
   {
-    name: "Rina Santoso",
+    name: "A**a",
     time: "9.00 AM - Jan, 2025",
-    stars: 4,
-    testimonial: "Deterjen cairnya bikin mencuci jadi lebih cepat dan hemat. Noda membandel hilang tanpa harus menggosok terlalu keras. Highly recommended!",
+    stars: 5,
+    testimonial: "Paket pengharumnya sangat wangi bener - bener wangi serasa ditempat laundry, disemprotin ke lemari juga biar wangi, makasih ya, next order lg yg varian lain",
   },
   {
-    name: "Budi Setiawan",
+    name: "L**y",
     time: "10.00 AM - Feb, 2025",
     stars: 5,
-    testimonial: "Produk ini sangat luar biasa! Hasil cuciannya bersih sempurna, dan aromanya tahan lama.",
+    testimonial: "Wangi segar,pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba.",
   },
   {
-    name: "Nanang Suherman",
+    name: "M**a",
     time: "8.30 AM - Mar, 2025",
-    stars: 4,
-    testimonial: "Menghemat waktu mencuci saya, sangat cocok untuk pakaian sehari-hari.",
+    stars: 5,
+    testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah.",
   },
   {
-    name: "Siti Nurhaliza",
+    name: "D**e",
     time: "8.30 AM - Mar, 2025",
-    stars: 2,
-    testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat ut eros id hendrerit. Nam a ex id turpis feugiat auctor. Donec mattis massa semper rhoncus ultrices.",
+    stars: 5,
+    testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu.",
+  },
+  {
+    name: "A**u",
+    time: "8.30 AM - Mar, 2025",
+    stars: 5,
+    testimonial: "Wangi ok ya smg lembut bantu biar baju g kusut hahaha.",
+  },
+  {
+    name: "c**a",
+    time: "8.30 AM - Mar, 2025",
+    stars: 5,
+    testimonial: "Paket pewangi udh sampai wanginya enak, blum sy coba buat gosok mudhan tahan lama kayak di londri, toko nya amanah, bang kurir baik sopan udh langganan.",
+  },
+  {
+    name: "R**S",
+    time: "8.30 AM - Mar, 2025",
+    stars: 5,
+    testimonial: "Alhamdulillah bagus, wanginya kalem, lumayan buat stock slma suka nyetrika, jd semanga buat nyetrika.",
   },
 ];
 
@@ -237,7 +296,7 @@ const TestimonialCards = () => {
           <div className="card w-96 h-44 bg-gradient-to-b from-[#EEF4FE] to-[#FFFFFF] shadow-lg rounded-xl px-5 py-3 border-4 border-[#CED4DC]">
             <div className="flex items-center mb-3">
               <div className="w-1/5 pr-5">
-                <img className="rounded-full w-full" src="/assets/people.png" alt={card.name} />
+                <img className="rounded-full w-full" src="/assets/reviewer-invert.png" alt={card.name} />
               </div>
               <div className="w-3/5">
                 <p className="font-bold text-md">{card.name}</p>
@@ -261,28 +320,46 @@ const TestimonialCards = () => {
 
 const cards2 = [
   {
-    name: "Rina Santoso",
+    name: "F**a",
     time: "9.00 AM - Jan, 2025",
-    stars: 4,
-    testimonial: "Deterjen cairnya bikin mencuci jadi lebih cepat dan hemat. Noda membandel hilang tanpa harus menggosok terlalu keras. Highly recommended!",
+    stars: 5,
+    testimonial: "Aromanya soft, elegan dan tidak eneg kayak bau minyak wangi ntah itu merk lain",
   },
   {
-    name: "Budi Setiawan",
+    name: "u**7 N**l**h",
     time: "10.00 AM - Feb, 2025",
     stars: 5,
-    testimonial: "Produk ini sangat luar biasa! Hasil cuciannya bersih sempurna, dan aromanya tahan lama.",
+    testimonial: "YaAllah wanginya lembut, sy suka apa lg yg sakura, wanginya lembut bgt.",
   },
   {
-    name: "Nanang Suherman",
+    name: "G**g K**s K**i",
     time: "8.30 AM - Mar, 2025",
-    stars: 4,
-    testimonial: "Menghemat waktu mencuci saya, sangat cocok untuk pakaian sehari-hari.",
+    stars: 5,
+    testimonial: "Trimaksih paket nya sudah sampai, Wangi segerr saya syka. Pengiriman cepet bangtz. pesen kemarin hari ini sampai.",
   },
   {
-    name: "Siti Nurhaliza",
+    name: "m**",
     time: "8.30 AM - Mar, 2025",
-    stars: 2,
-    testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat ut eros id hendrerit. Nam a ex id turpis feugiat auctor. Donec mattis massa semper rhoncus ultrices.",
+    stars: 5,
+    testimonial: "Asli, pas unboxing lgs harum bgt ga ngerti deg mw ngomong apa & ni pertama x beli next bli aroma lainnya krn kepo kek mna harumnya mna murah bgt tapi ga murahan wanginya, sukses selalu ya seller & kurir.",
+  },
+  {
+    name: "L**y",
+    time: "8.30 AM - Mar, 2025",
+    stars: 5,
+    testimonial: "Wangi segar, pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba.",
+  },
+  {
+    name: "M**a",
+    time: "8.30 AM - Mar, 2025",
+    stars: 5,
+    testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah.",
+  },
+  {
+    name: "D**e",
+    time: "8.30 AM - Mar, 2025",
+    stars: 5,
+    testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu Tuhan Yesis Kristus memberkati berlimpah.",
   },
 ];
 
@@ -294,7 +371,7 @@ const TestimonialCards2 = () => {
           <div className="card w-96 h-44 bg-gradient-to-b from-[#EEF4FE] to-[#FFFFFF] shadow-lg rounded-xl px-5 py-3 border-4 border-[#CED4DC]">
             <div className="flex items-center mb-3">
               <div className="w-1/5 pr-5">
-                <img className="rounded-full w-full" src="/assets/people.png" alt={card.name} />
+                <img className="rounded-full w-full" src="/assets/reviewer-invert.png" alt={card.name} />
               </div>
               <div className="w-3/5">
                 <p className="font-bold text-md">{card.name}</p>
@@ -321,9 +398,9 @@ export default function Home() {
     <div>
       <div id='hero' className='relative top-0 left-0 w-full h-[41rem] flex justify-center overflow-hidden'>
         <img
-          src="/assets/hero-bg.jpeg"
+          src="/assets/bg-hero.png"
           alt="BG Hero"
-          className="w-full h-full absolute top-0 left-0 -z-20 blur-[2px] parallax-hero"
+          className="w-full h-full absolute -top-0 left-0 -z-20 blur-[2px] parallax-hero"
           style={{ objectFit: "cover" }}
         />
         <div className='w-full h-full absolute top-0 left-0 -z-10 bg-[#D3D3D3]/70 '></div>
@@ -361,7 +438,7 @@ export default function Home() {
             <h1 className='text-4xl md:text-6xl md:leading-[5.5rem] font-semibold'>produk kami?</h1>
             
             <div className="relative mt-10">
-              <div className="w-[38rem] h-[38rem] overflow-hidden">
+              <div className="w-[39rem] h-[39rem] overflow-hidden">
                 <img
                   src="/assets/special-1.png"
                   alt="Baju Putih"
@@ -428,11 +505,89 @@ export default function Home() {
         </div>
       </div>
 
-      <div id='produk-kami' className='relative top-0 left-0 w-full h-[41rem] flex justify-center overflow-hidden'>
+      <div id='produk-kami' className='w-full flex justify-center overflow-hidden'>
         <div className="container mx-auto px-5 xl:px-20">
-          <div className="flex items-center">
+          <div className="flex items-center mb-8">
             <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-bold text-center md:text-left'>Produk Kami</h1>
-            <Link className="text-gray-500 underline ml-auto" href="/">Lihat Semua Produk</Link>
+            <Link href="/product" className="text-gray-500 underline ml-auto">Lihat Semua Produk</Link>
+          </div>
+          <div className="w-full overflow-hidden relative pb-20"> 
+            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-10 z-10"></div>
+            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-10 z-10"></div>
+            <img
+              src="/assets/group-gelembung-1.png"
+              alt="Gelembung"
+              className="w-full h-full absolute -bottom-10 left-0 group-gelembung-1"
+              style={{ objectFit: "contain" }}
+            />
+            <img
+              src="/assets/group-gelembung-2.png"
+              alt="Gelembung"
+              className="w-full h-full absolute -bottom-24 left-0 group-gelembung-2"
+              style={{ objectFit: "contain" }}
+            />
+            <img
+              src="/assets/group-gelembung-3.png"
+              alt="Gelembung"
+              className="w-full h-full absolute -bottom-24 left-0 group-gelembung-3"
+              style={{ objectFit: "contain" }}
+            />
+            <div className="draggable-container w-max pl-[66rem] -left-[64rem] md:pl-[20rem] md:-left-[14rem] 2xl:pl-[3rem] 2xl:-left-[1rem] pb-14 relative ">
+              <div className="draggable-slide w-fit flex gap-5">
+                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[27rem] overflow-hidden">
+                    <img
+                      src="/assets/pelicin-pakaian.png"
+                      alt="Pelicin pakaian"
+                      className="w-full h-full group-hover:scale-125 transition duration-300"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
+                    <p className="">PELICIN <br></br> PAKAIAN</p>
+                  </div>
+                </Link>
+                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[27rem] overflow-hidden">
+                    <img
+                      src="/assets/detergen.png"
+                      alt="Detergen"
+                      className="w-full h-full group-hover:scale-125 transition duration-300"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
+                    <p className="">DETERGEN</p>
+                  </div>
+                </Link>
+                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[27rem] overflow-hidden">
+                    <img
+                      src="/assets/softener.png"
+                      alt="Softener"
+                      className="w-full h-full group-hover:scale-125 transition duration-300"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
+                    <p className="">SOFTENER</p>
+                  </div>
+                </Link>
+                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[27rem] overflow-hidden">
+                    <img
+                      src="/assets/sabun-cuci-piring.png"
+                      alt="Sabun Cuci Piring"
+                      className="w-full h-full group-hover:scale-125 transition duration-300"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
+                    <p className="">SABUN CUCI PIRING</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -454,13 +609,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div id='ulasan-pelanggan' className='relative top-0 left-0 w-full flex justify-center overflow-hidden'>
+      <div id='ulasan-pelanggan' className='w-full flex justify-center overflow-hidden'>
         <div className="container mx-auto px-5 xl:px-20 relative">
           <h1 className='text-4xl md:text-5xl mb-3 font-bold'>Ulasan Pelanggan</h1>
           <h1 className='text-xl'>Kepuasan pelanggan adalah prioritas kami</h1>
-          <div className="bg-gradient-to-r from-white absolute left-20 h-full w-10 z-10"></div>
-          <div className="bg-gradient-to-l from-white absolute right-20 h-full w-10 z-10"></div>
-          <div className="body__inner-wrapper pt-10 pb-20">
+          <div className="body__inner-wrapper pt-10 pb-20 relative">
+            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-10 z-20"></div>
+            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-10 z-20"></div>
             <div className="marquee pb-5">
               <div className="marquee__inner-wrap">
                 <div className="marquee__inner">
@@ -509,7 +664,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <HeroAnimation />
+      <AllAnimation />
     </div>
   );
 }

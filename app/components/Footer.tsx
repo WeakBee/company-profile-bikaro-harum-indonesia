@@ -32,12 +32,12 @@ const Footer = () => {
                 priority
                 className="w-3 h-5 mr-1 mt-1"
               />
-              <p><Link target='_blank' href="https://maps.app.goo.gl/d8ad1nS2BrCpLcYa6">Jl. HR Rasuna Said, Karet Kuningan, Setiabudi Jakarta Selatan, DKI Jakarta, 12940</Link></p>
+              <p><Link className="hover:underline" target='_blank' href="https://maps.app.goo.gl/d8ad1nS2BrCpLcYa6">Jl. HR Rasuna Said, Karet Kuningan, Setiabudi Jakarta Selatan, DKI Jakarta, 12940</Link></p>
             </div>
             <div className='w-3/5 px-14'>
               <p>Temukan Kami</p>
               <div className="grid grid-cols-3 gap-2 leading-[1.5rem]">
-                <Link href="/">
+                <Link href="/" className="hover:underline">
                   <div className='flex items-center'>
                     <Image
                       src="/assets/shopee_icon.png" // Path ke gambar di folder public
@@ -50,7 +50,7 @@ const Footer = () => {
                     <p>Shopee</p>
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/" className="hover:underline">
                   <div className='flex items-center'>
                     <Image
                       src="/assets/instagram_icon.png" // Path ke gambar di folder public
@@ -63,7 +63,7 @@ const Footer = () => {
                     <p>Instagram</p>
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/" className="hover:underline">
                   <div className='flex items-center'>
                     <Image
                       src="/assets/email_icon.png" // Path ke gambar di folder public
@@ -76,7 +76,7 @@ const Footer = () => {
                     <p>Email</p>
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/" className="hover:underline">
                   <div className='flex items-center'>
                     <Image
                       src="/assets/tiktok_icon.png" // Path ke gambar di folder public
@@ -89,7 +89,7 @@ const Footer = () => {
                     <p>Tiktok</p>
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/" className="hover:underline">
                   <div className='flex items-center'>
                     <Image
                       src="/assets/whatsapp_icon.png" // Path ke gambar di folder public
@@ -105,9 +105,9 @@ const Footer = () => {
               </div>
             </div>
             <div className='w-1/5'>
-              <p><Link href="/">Produk Kami</Link></p>
-              <p><Link href="/">Tentang Kami</Link></p>
-              <p><Link href="/">Daftar Distributor</Link></p>
+              <p><Link className="hover:underline" href="/">Produk Kami</Link></p>
+              <p><Link className="hover:underline" href="/">Tentang Kami</Link></p>
+              <p><Link className="hover:underline" href="/">Daftar Distributor</Link></p>
             </div>
           </div>
           <div className='w-full flex items-center justify-center pt-16 pb-3'>
