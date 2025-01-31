@@ -69,26 +69,34 @@ const Navbar = () => {
               width={1280}
               height={80}
               priority
-              className="w-80"
+              className="w-48 md:w-80"
             />
           </Link>
         </div>
-        <div className={`menu flex gap-10 ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className={`menu md:flex gap-10 text-[#06246C] ${isMobileMenuOpen ? 'open' : ''}`}>
           <Link href="/" className="hover:underline">
-            Home
-          </Link>
+            <div>
+              Home
+            </div>
+          </Link>          
           <Link href="/product" className="hover:underline">
-            Produk
+            <div>
+              Produk
+            </div>
           </Link>
-          <Link href="/" className="hover:underline">
-            Tentang Kami
+          <Link href="/tentang-kami" className="hover:underline">
+            <div>
+              Tentang Kami
+            </div>
           </Link>
-          <Link href="/" className="hover:underline">
-            Daftar Distributor
+          <Link href="/daftar-distributor" className="hover:underline">
+            <div>
+              Daftar Distributor
+            </div>
           </Link>
         </div>
         <button className="mobile-menu-button" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? 'Close' : 'Menu'}
+          <img className='w-4 h-4' src="/assets/navbar-menu.png" alt="Navbar Menu" />
         </button>
       </div>
       <style jsx>{`
@@ -104,16 +112,17 @@ const Navbar = () => {
           .menu {
             display: ${isMobileMenuOpen ? 'block' : 'none'};
             position: absolute;
-            top: 55px;
+            top: 59px;
             left: 0;
-            background: #444;
+            background: white;
             width: 100%;
             padding: 10px 0;
             text-align: center;
           }
           .mobile-menu-button {
-            display: block;
-            background: black;
+            display: flex;
+            justify-content: center;
+            align-items:center;
           }
         }
       `}</style>

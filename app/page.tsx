@@ -174,7 +174,7 @@ const AllAnimation = () => {
           }
         });        
         gsap.effects.counter(".moving-number", {
-          end: 600000,
+          end: 400000,
           duration: 2,
           increment: 1,
           ease: "power2.inOut",
@@ -396,7 +396,7 @@ const TestimonialCards2 = () => {
 export default function Home() {
   return (
     <div>
-      <div id='hero' className='relative top-0 left-0 w-full h-[41rem] flex justify-center overflow-hidden'>
+      <div id='hero' className='relative top-0 left-0 w-full h-screen md:h-[41rem] flex justify-center overflow-hidden'>
         <img
           src="/assets/bg-hero.png"
           alt="BG Hero"
@@ -415,18 +415,18 @@ export default function Home() {
         <img
           src="/assets/ranting.png"
           alt="Ranting Pohon Melingkar"
-          className="w-80 h-80 absolute bottom-10 left-0 parallax-motto-1"
+          className="w-40 h-40 md:w-80 md:h-80 absolute bottom-10 left-0 parallax-motto-1"
           style={{ objectFit: "cover" }}
         />
         <img
           src="/assets/ranting.png"
           alt="Ranting Pohon Melingkar"
-          className="w-80 h-80 absolute top-16 right-0 parallax-motto-2"
+          className="w-40 h-40 md:w-80 md:h-80 absolute top-16 right-0 parallax-motto-2"
           style={{ objectFit: "cover" }}
         />
         <div className='relative top-0 left-0 w-full h-[41rem]'>
           <div className="container mx-auto flex justify-center items-center h-full">
-            <h1 className='text-white w-2/3 leading-[2.6rem] text-center text-3xl px-4'>Kami hadir untuk memenuhi kebutuhan kebersihan dan kesegaran keluarga Anda. Dengan produk-produk berkualitas kami berkomitmen memberikan solusi praktis dan terpercaya untuk rumah tangga modern.</h1>
+            <h1 className='text-white md:w-2/3 md:leading-[2.6rem] text-center text-xl md:text-3xl px-4'>Kami hadir untuk memenuhi kebutuhan kebersihan dan kesegaran keluarga Anda. Dengan produk-produk berkualitas kami berkomitmen memberikan solusi praktis dan terpercaya untuk rumah tangga modern.</h1>
           </div>
         </div>
       </div>
@@ -434,11 +434,11 @@ export default function Home() {
       <div id='special' className="relative bg-white overflow-hidden">
         <div className='relative top-0 left-0 w-full'>
           <div className="container relative mx-auto h-full px-5 xl:px-20 pt-10 pb-[7rem]">
-            <h1 className='text-4xl md:text-6xl md:leading-[5.5rem] font-semibold'>Apa yang spesial dari</h1>
-            <h1 className='text-4xl md:text-6xl md:leading-[5.5rem] font-semibold'>produk kami?</h1>
+            <h1 className='text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>Apa yang spesial dari</h1>
+            <h1 className='text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>produk kami?</h1>
             
             <div className="relative mt-10">
-              <div className="w-[39rem] h-[39rem] overflow-hidden">
+              <div className="w-full md:w-[39rem] md:h-[39rem] overflow-hidden">
                 <img
                   src="/assets/special-1.png"
                   alt="Baju Putih"
@@ -447,8 +447,8 @@ export default function Home() {
                 />
               </div>
 
-              <div className="absolute top-[9rem] right-0 z-10 w-full flex justify-end pt-96 text-aos-animation-1">
-                <div className="bg-white shadow-xl p-10 w-1/2">
+              <div className="absolute top-0 md:top-[9rem] right-0 z-10 w-full flex justify-end pt-96 text-aos-animation-1">
+                <div className="bg-white shadow-xl p-10 md:w-1/2">
                   <p className="text-xl">Cegah kotoran menempel kembali ke serat pakaian, anti bacterial, menghilangkan noda membandel, menjadikan pakaian bersih dan wangi</p>
                 </div>
               </div>
@@ -456,7 +456,7 @@ export default function Home() {
             
             <div className="relative mt-[10rem]">
               <div className="flex justify-end w-full">
-                <div className="w-[44rem] h-[44rem] overflow-hidden">
+                <div className="w-full md:w-[44rem] md:h-[44rem] overflow-hidden">
                   <img
                     src="/assets/special-2.png"
                     alt="Setrika"
@@ -466,8 +466,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute top-[0.5rem] right-0 z-10 w-full pt-96 text-aos-animation-2">
-                <div className="bg-white shadow-xl px-10 py-20 w-1/2">
+              <div className="absolute top-0 md:top-[0.5rem] right-0 z-10 w-full pt-96 text-aos-animation-2">
+                <div className="bg-white shadow-xl px-10 py-14 md:py-20 md:w-1/2">
                   <p className="text-xl">Dengan pelicin tanpa kandungan alkohol</p>
                 </div>
               </div>
@@ -475,7 +475,7 @@ export default function Home() {
             
             <div className="relative mt-[10rem]">
               <div className="flex justify-end w-full">
-                <div className="w-[38rem] h-[38rem] overflow-hidden">
+                <div className="w-full md:w-[38rem] md:h-[38rem] overflow-hidden">
                   <img
                     src="/assets/special-3.png"
                     alt="Setrika"
@@ -485,7 +485,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex w-full mt-10">
-                <div className="w-[38rem] h-[38rem] overflow-hidden">
+                <div className="w-full md:w-[38rem] md:h-[38rem] overflow-hidden">
                   <img
                     src="/assets/special-4.png"
                     alt="Setrika"
@@ -507,13 +507,13 @@ export default function Home() {
 
       <div id='produk-kami' className='w-full flex justify-center overflow-hidden'>
         <div className="container mx-auto px-5 xl:px-20">
-          <div className="flex items-center mb-8">
+          <div className="flex flex-col md:flex-row items-center mb-8">
             <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-bold text-center md:text-left'>Produk Kami</h1>
-            <Link href="/product" className="text-gray-500 underline ml-auto">Lihat Semua Produk</Link>
+            <Link href="/product" className="text-gray-500 underline md:ml-auto">Lihat Semua Produk</Link>
           </div>
           <div className="w-full overflow-hidden relative pb-20"> 
-            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-10 z-10"></div>
-            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-10 z-10"></div>
+            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-5 md:w-10 z-10"></div>
+            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-5 md:w-10 z-10"></div>
             <img
               src="/assets/group-gelembung-1.png"
               alt="Gelembung"
@@ -534,7 +534,7 @@ export default function Home() {
             />
             <div className="draggable-container w-max pl-[66rem] -left-[64rem] md:pl-[20rem] md:-left-[14rem] 2xl:pl-[3rem] 2xl:-left-[1rem] pb-14 relative ">
               <div className="draggable-slide w-fit flex gap-5">
-                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                <Link href="/product?tab=pelicin" className="group w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[27rem] overflow-hidden">
                     <img
                       src="/assets/pelicin-pakaian.png"
@@ -547,7 +547,7 @@ export default function Home() {
                     <p className="">PELICIN <br></br> PAKAIAN</p>
                   </div>
                 </Link>
-                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                <Link href="/product?tab=detergent" className="group w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[27rem] overflow-hidden">
                     <img
                       src="/assets/detergen.png"
@@ -560,7 +560,7 @@ export default function Home() {
                     <p className="">DETERGEN</p>
                   </div>
                 </Link>
-                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                <Link href="/product?tab=softener" className="group w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[27rem] overflow-hidden">
                     <img
                       src="/assets/softener.png"
@@ -573,7 +573,7 @@ export default function Home() {
                     <p className="">SOFTENER</p>
                   </div>
                 </Link>
-                <Link href="/product" className="group w-80 overflow-hidden rounded-lg shadow-xl">
+                <Link href="/product?tab=sabun" className="group w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[27rem] overflow-hidden">
                     <img
                       src="/assets/sabun-cuci-piring.png"
@@ -592,18 +592,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div id='produk-terjual' className='relative top-0 left-0 w-full h-[41rem] flex justify-center overflow-hidden'>
+      <div id='produk-terjual' className='relative top-0 left-0 w-full h-[26rem] md:h-[41rem] flex justify-center overflow-hidden'>
         <div className="container mx-auto px-5 xl:px-20">
           <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-bold text-center md:text-left'>Produk Kami</h1>
           <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-bold text-center md:text-left'>Sudah Terjual</h1>
-          <div className="flex items-center">
+          <div className="flex justify-center md:justify-start items-center">
             <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-bold text-center md:text-left text-[#08A500] moving-number mr-2'>0</h1>
             <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-bold text-center md:text-left text-[#08A500]'>+</h1>
           </div>
           <img
             src="/assets/peta-indonesia-2.png"
             alt="Peta Indonesia"
-            className="w-3/4 h-full absolute top-0 -right-10 -z-20 parallax-peta -rotate-[20deg]"
+            className="w-full md:w-3/4 h-full absolute top-0 md:-right-10 -z-20 parallax-peta -rotate-[20deg]"
             style={{ objectFit: "contain" }}
           />
         </div>
@@ -614,8 +614,8 @@ export default function Home() {
           <h1 className='text-4xl md:text-5xl mb-3 font-bold'>Ulasan Pelanggan</h1>
           <h1 className='text-xl'>Kepuasan pelanggan adalah prioritas kami</h1>
           <div className="body__inner-wrapper pt-10 pb-20 relative">
-            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-10 z-20"></div>
-            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-10 z-20"></div>
+            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-5 md:w-10 z-20"></div>
+            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-5 md:w-10 z-20"></div>
             <div className="marquee pb-5">
               <div className="marquee__inner-wrap">
                 <div className="marquee__inner">
@@ -637,15 +637,15 @@ export default function Home() {
       </div>
 
       <div id='bekerja-sama' className='relative top-0 left-0 w-full flex justify-center overflow-hidden'>
-        <div className="container mx-auto px-5 xl:px-20 pb-20">
-          <div className="w-full flex items-center">
-            <div className="w-2/5 font-bold text-7xl leading-[6rem]">
+        <div className="container mx-auto md:px-5 xl:px-20 pb-20">
+          <div className="w-full flex flex-col md:flex-row items-center">
+            <div className="md:w-2/5 mb-5 text-center md:text-start md:mb-0 font-bold text-4xl leading-[2.7rem] md:text-7xl md:leading-[6rem]">
               <p>Ingin</p>
               <p>Bekerja</p>
               <p>Sama?</p>
             </div>
-            <div className="w-3/5 px-10">
-              <div className="bg-[#06246C] rounded-xl px-10 py-5">
+            <div className="md:w-3/5 px-4 md:px-10">
+              <div className="bg-[#06246C] rounded-xl px-4 md:px-10 py-5">
                 <p className="font-bold text-2xl mb-5 text-white">Kirim Kami Pesan</p>
                 <form action="">
                   <input className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" type="text" placeholder="Nama" />
