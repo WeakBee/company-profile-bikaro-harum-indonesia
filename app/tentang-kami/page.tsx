@@ -24,7 +24,7 @@ export default function TentangKami() {
                 </div>
             </div>
             <div id='lokasi' className='relative top-0 left-0 w-full flex justify-center items-center'>
-                <div className="container mx-auto px-5 xl:px-20 py-5 text-center md:text-start md:flex items-center gap-10">
+                <div className="container mx-auto px-5 xl:px-20 py-10 md:py-5 text-center md:text-start md:flex items-center gap-10">
                     <div className="md:w-1/2 mb-5 md:mb-0">
                         <p className="text-xl md:text-3xl font-semibold">Lokasi Perusahaan Kami</p>
                         <p className="text-xl md:text-2xl font-medium">Headquarters</p>
@@ -54,8 +54,8 @@ export default function TentangKami() {
                 </div>
             </div>
             <div id='hubungi-kami' className='relative top-0 left-0 w-full flex justify-center items-center mb-5'>
-                <div className="container mx-auto px-5 xl:px-20 py-5 text-center md:text-start md:flex items-center gap-10">
-                    <div className="md:w-1/2 mb-5 md:mb-0">
+                <div className="container mx-auto px-5 xl:px-20 py-10 md:py-5 text-center md:text-start md:flex items-center gap-10">
+                    <div className="md:w-1/2 mb-10 md:mb-0">
                         <p className="text-xl md:text-3xl font-semibold mb-3">Hubungi Kami</p>
                         <p className="">Email, Whatsapp, atau Direct Message Social media
                         kami untuk informasi lebih lanjut.</p>

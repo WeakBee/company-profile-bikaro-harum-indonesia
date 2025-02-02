@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { gsap } from "gsap";
 
 const categories = [
   { id: 'all', label: 'Semua' },
@@ -21,6 +22,24 @@ type ProductType = {
     star: number;
     selled: number;
     description: string;
+};
+
+const AllAnimation = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {  
+        const ctx = gsap.from(".hero-text-animation", {
+          opacity:0,
+          y:200,
+          duration:1.3
+        });
+
+        return () => {
+          ctx.revert(); // Bersihkan animasi saat komponen di-unmount
+        };
+    }
+  }, []);
+
+  return null;
 };
 
 
@@ -158,18 +177,16 @@ export default function Product() {
                 <div className='w-full h-full absolute top-0 left-0 -z-10 bg-[#0B0A4166]/10'></div>
                 <div className="container mx-auto px-5 xl:px-20 pt-36 pb-24 text-white">
                     <div>
-                        <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-medium text-center md:text-left'>Produk</h1>
-                        <h1 className='text-lg md:text-xl text-center md:text-left'>Kami memiliki produk berkualitas yang sudah</h1>
-                        <h1 className='text-lg md:text-xl text-center md:text-left'>digunakan di berbagai wilayah Indonesia dengan</h1>
-                        <h1 className='text-lg md:text-xl text-center md:text-left'>harga terjangkau</h1>
+                        <h1 className='hero-text-animation text-3xl mb-2 md:text-5xl md:leading-[4.5rem] font-medium text-center md:text-left'>Produk</h1>
+                        <h1 className='hero-text-animation text-lg md:text-xl text-center md:text-left'>Kami memiliki produk berkualitas yang sudah<br className="hidden md:block"/>digunakan di berbagai wilayah Indonesia dengan<br className="hidden md:block"/>harga terjangkau</h1>
                     </div>
                 </div>
             </div>
     
             <div id='motto' className="relative min-h-[40rem] overflow-hidden">
                 <Tabs value={activeTab}>
-                    <div className="container mx-auto px-5 xl:px-20 pt-16">
-                        <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2">
+                    <div className="container mx-auto px-5 xl:px-20 pt-16 overflow-y-auto md:overflow-auto">
+                        <TabsList className="w-fit flex md:w-auto md:grid grid-cols-5 gap-2">
                         {categories.map(({ id, label }) => (
                             <TabsTrigger
                             key={id}
@@ -182,7 +199,7 @@ export default function Product() {
                         ))}
                         </TabsList>
                     </div>
-                    <div className="container mx-auto px-5 xl:px-20 border-t pt-28 md:pt-8 pb-10">
+                    <div className="container mx-auto px-5 xl:px-20 border-t pt-5 md:pt-8 pb-10">
                         {categories.map(({ id }) => (
                             <TabsContent key={id} value={id} className="grid grid-cols-1 md:grid-cols-4 gap-5">
                                 {products.filter(product => id === 'all' || product.category === id).map(product => (
@@ -254,6 +271,7 @@ export default function Product() {
                     </DialogContent>
                 </Dialog>
             )}
+            <AllAnimation />
         </div>
     );
 }

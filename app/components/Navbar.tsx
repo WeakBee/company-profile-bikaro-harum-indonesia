@@ -20,30 +20,31 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
+  
       if (window.scrollY > 650) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
-
+  
       if (currentScrollY > lastScrollY) {
-        // Scroll ke bawah
+        // Scroll ke bawah -> Navbar hilang dan tutup menu di mobile
         setVisible(false);
+        setMobileMenuOpen(false);
       } else {
-        // Scroll ke atas
+        // Scroll ke atas -> Navbar muncul kembali
         setVisible(true);
       }
-
+  
       setLastScrollY(currentScrollY);
     };
-
+  
     window.addEventListener('scroll', handleScroll);
-
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY]);  
 
   // Determine navbar background based on pathname
   const navbarBackground =
@@ -59,6 +60,7 @@ const Navbar = () => {
         navbarBackground
       } ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
+      <div className='menu-background' onClick={toggleMobileMenu}></div>
       <div className="container mx-auto px-5 xl:px-20 flex justify-between items-center">
         {/* Gambar Logo */}
         <div className="logo">
@@ -74,22 +76,25 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={`menu md:flex gap-10 text-[#06246C] ${isMobileMenuOpen ? 'open' : ''}`}>
-          <Link href="/" className="hover:underline">
+          <div className={`font-bold flex justify-end ${isMobileMenuOpen ? 'block' : 'hidden'}`} onClick={toggleMobileMenu}>
+            X
+          </div>
+          <Link href="/" className="hover:underline nav-text-link">
             <div>
               Home
             </div>
           </Link>          
-          <Link href="/product" className="hover:underline">
+          <Link href="/product" className="hover:underline nav-text-link">
             <div>
               Produk
             </div>
           </Link>
-          <Link href="/tentang-kami" className="hover:underline">
+          <Link href="/tentang-kami" className="hover:underline nav-text-link">
             <div>
               Tentang Kami
             </div>
           </Link>
-          <Link href="/daftar-distributor" className="hover:underline">
+          <Link href="/daftar-distributor" className="hover:underline nav-text-link">
             <div>
               Daftar Distributor
             </div>
@@ -109,16 +114,29 @@ const Navbar = () => {
           cursor: pointer;
         }
         @media (max-width: 768px) {
-          .menu {
+          .menu-background {
             display: ${isMobileMenuOpen ? 'block' : 'none'};
             position: absolute;
-            top: 59px;
+            top: 0;
             left: 0;
-            background: white;
+            background: #00000070;
             width: 100%;
-            padding: 10px 0;
-            text-align: center;
+            height:100vh;
+            z-index:-1;
+          }
+          .menu {
+            position: absolute;
+            transform: ${isMobileMenuOpen ? 'translate(-100vw,0px)' : 'translate(0px,0px)'};
+            top: 0;
+            right: -100%;
+            background: white;
+            width: auto;
+            height:120vh;
+            padding: 40px 20px;
+            text-align: start;
             box-shadow: 0px 15px 14px 0px #56565660;
+            z-index:100;
+            transition: all 0.51s ;
           }
           .mobile-menu-button {
             display: flex;

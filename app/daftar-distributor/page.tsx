@@ -1,6 +1,26 @@
 'use client';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Link from 'next/link';
+import { useEffect } from "react";
+import { gsap } from "gsap";
+
+const AllAnimation = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {  
+        const ctx = gsap.from(".hero-text-animation", {
+          opacity:0,
+          y:200,
+          duration:1.3
+        });
+
+        return () => {
+          ctx.revert(); // Bersihkan animasi saat komponen di-unmount
+        };
+    }
+  }, []);
+
+  return null;
+};
 
 export default function DaftarDistributor() {
     return (
@@ -8,9 +28,7 @@ export default function DaftarDistributor() {
             <div id='hero' className='relative top-0 left-0 w-full h-screen md:h-[28rem] flex bg-[#E9ECFF] justify-center overflow-hidden'>
             <div className="container mx-auto px-5 xl:px-20 pt-10 text-black md:flex justify-center">
                 <div className='md:w-1/2'>
-                    <h1 className='text-3xl md:text-5xl md:leading-[4rem] font-medium text-center md:text-left mt-32'>Daftar jadi <span className='text-[#06246C]'>Distributor</span></h1>
-                    <h1 className='text-3xl md:text-5xl md:leading-[4rem] font-medium text-center md:text-left'>dan dapatkan</h1>
-                    <h1 className='text-3xl md:text-5xl md:leading-[4rem] font-medium text-center md:text-left'>penawaran <span className='text-[#06246C]'>khusus</span></h1>
+                    <h1 className='hero-text-animation text-3xl md:text-5xl md:leading-[4rem] font-medium text-center md:text-left mt-32'>Daftar jadi <span className='text-[#06246C]'>Distributor</span> <br /> dan dapatkan <br /> penawaran <span className='text-[#06246C]'>khusus</span></h1>
                 </div>
                 <div className='min-h-96 md:w-1/2 relative'>
                     <img
@@ -96,23 +114,26 @@ export default function DaftarDistributor() {
             <div id='gallery' className='relative w-full overflow-hidden'>
                 <div className="container mx-auto px-5 xl:px-20 pt-8 md:pt-20 pb-20 text-center relative">
                     <p className='text-3xl font-bold md:text-start mb-10'>Gallery</p>
-                    <div className='md:flex gap-5'>
-                        <div className='md:w-1/3'>
+                    <div className='flex gap-5'>
+                        <div className='w-1/2 md:w-1/3'>
                             <Link href="/assets/gallery/1.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/1.jpg" alt="" /></Link>
                             <Link href="/assets/gallery/4.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/4.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/3.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/3.jpg" alt="" /></Link>
                         </div>
-                        <div className='md:w-1/3'>
+                        <div className='w-1/2 md:w-1/3'>
                             <Link href="/assets/gallery/2.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/2.jpg" alt="" /></Link>
                             <Link href="/assets/gallery/5.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/5.jpg" alt="" /></Link>
                             <Link href="/assets/gallery/7.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/7.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/6.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/6.jpg" alt="" /></Link>   
                         </div>
-                        <div className='md:w-1/3'>
+                        <div className='hidden md:block md:w-1/3'>
                             <Link href="/assets/gallery/3.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/3.jpg" alt="" /></Link>
                             <Link href="/assets/gallery/6.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/6.jpg" alt="" /></Link>                        
                         </div>
                     </div>
                 </div>
             </div>
+            <AllAnimation />
         </div>
     );
 }

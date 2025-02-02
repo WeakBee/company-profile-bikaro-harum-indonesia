@@ -63,6 +63,11 @@ const AllAnimation = () => {
           },
         });
         
+        gsap.from(".hero-text-animation ", {
+          opacity:0,
+          y:200,
+          duration:1.3
+        });
         gsap.to(".parallax-hero", {
           scale: 1.1, 
           y: 300, 
@@ -72,6 +77,18 @@ const AllAnimation = () => {
             start: "top top",
             end: "bottom top",
             scrub: true
+          }
+        });
+        
+        gsap.from(".motto-text-animation", {
+          opacity:0,
+          y:200,
+          duration:1.3,
+          scrollTrigger: {
+            trigger: "#motto",
+            start: "20% 80%",
+            end: "20% 80%",
+            toggleActions: "restart none reset reset"
           }
         });
         gsap.from(".parallax-motto-1", {
@@ -105,9 +122,9 @@ const AllAnimation = () => {
           duration:1.3,
           scrollTrigger: {
             trigger: ".image-scale-animation-1",
-            start: "top 80%",
-            end: "top 80%",
-            toggleActions: "restart none reset reset",
+            start: "20% bottom",
+            end: "20% bottom",
+            toggleActions: "restart none reset reset"
           }
         });
         gsap.from(".text-aos-animation-1", {
@@ -405,13 +422,11 @@ export default function Home() {
         />
         <div className='w-full h-full absolute top-0 left-0 -z-10 bg-[#D3D3D3]/70 '></div>
         <div className="container mx-auto px-5 xl:px-20 pt-20">
-          <h1 className='text-4xl md:text-6xl md:leading-[4.5rem] font-medium text-center md:text-left mt-32'>Kesegaran, Kebersihan,</h1>
-          <h1 className='text-4xl md:text-6xl md:leading-[4.5rem] font-medium text-center md:text-left'>dan Kualitas Terbaik</h1>
-          <h1 className='text-4xl md:text-6xl md:leading-[4.5rem] font-medium text-center md:text-left'>dalam Satu <span className={`${theNautigal.className} text-5xl md:text-7xl`}> Genggaman</span></h1>
+          <h1 className='hero-text-animation text-4xl md:text-6xl leading-[3rem] md:leading-[4.5rem] font-medium text-center md:text-left mt-32'>Kesegaran, Kebersihan,<br className="hidden md:block"/> dan Kualitas Terbaik<br className="hidden md:block" /> dalam Satu <span className={`${theNautigal.className} text-5xl md:text-7xl`}> Genggaman</span></h1>
         </div>
       </div>
 
-      <div id='motto' className="relative bg-[#A8C7D9] overflow-hidden">
+      <div id='motto' className="relative h-screen md:h-auto bg-[#A8C7D9] overflow-hidden">
         <img
           src="/assets/ranting.png"
           alt="Ranting Pohon Melingkar"
@@ -426,19 +441,19 @@ export default function Home() {
         />
         <div className='relative top-0 left-0 w-full h-[41rem]'>
           <div className="container mx-auto flex justify-center items-center h-full">
-            <h1 className='text-white md:w-2/3 md:leading-[2.6rem] text-center text-xl md:text-3xl px-4'>Kami hadir untuk memenuhi kebutuhan kebersihan dan kesegaran keluarga Anda. Dengan produk-produk berkualitas kami berkomitmen memberikan solusi praktis dan terpercaya untuk rumah tangga modern.</h1>
+            <h1 className='motto-text-animation text-white md:w-2/3 md:leading-[2.6rem] text-center text-xl md:text-3xl px-4'>Kami hadir untuk memenuhi kebutuhan kebersihan dan kesegaran keluarga Anda. Dengan produk-produk berkualitas kami berkomitmen memberikan solusi praktis dan terpercaya untuk rumah tangga modern.</h1>
           </div>
         </div>
       </div>
       
       <div id='special' className="relative bg-white overflow-hidden">
         <div className='relative top-0 left-0 w-full'>
-          <div className="container relative mx-auto h-full px-5 xl:px-20 pt-10 pb-[7rem]">
-            <h1 className='text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>Apa yang spesial dari</h1>
-            <h1 className='text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>produk kami?</h1>
+          <div className="container relative mx-auto h-full px-0 xl:px-20 pt-10 pb-[7rem]">
+            <h1 className='ml-2 text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>Apa yang spesial dari</h1>
+            <h1 className='ml-2 text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>produk kami?</h1>
             
             <div className="relative mt-10">
-              <div className="w-full md:w-[39rem] md:h-[39rem] overflow-hidden">
+              <div className="w-2/3 md:w-[37rem] md:h-[37rem] overflow-hidden">
                 <img
                   src="/assets/special-1.png"
                   alt="Baju Putih"
@@ -447,16 +462,16 @@ export default function Home() {
                 />
               </div>
 
-              <div className="absolute top-0 md:top-[9rem] right-0 z-10 w-full flex justify-end pt-96 text-aos-animation-1">
-                <div className="bg-white shadow-xl p-10 md:w-1/2">
-                  <p className="text-xl">Cegah kotoran menempel kembali ke serat pakaian, anti bacterial, menghilangkan noda membandel, menjadikan pakaian bersih dan wangi</p>
+              <div className="absolute -top-[15rem] md:top-[8rem] right-0 md:right-10 z-10 w-full flex justify-end pt-96 text-aos-animation-1">
+                <div className="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] p-7 md:p-10 w-2/3 md:w-1/2">
+                  <p className="text-lg md:text-xl">Cegah kotoran menempel kembali ke serat pakaian, anti bacterial, menghilangkan noda membandel, menjadikan pakaian bersih dan wangi</p>
                 </div>
               </div>
             </div>
             
-            <div className="relative mt-[10rem]">
+            <div className="relative mt-[15rem] md:mt-[10rem]">
               <div className="flex justify-end w-full">
-                <div className="w-full md:w-[44rem] md:h-[44rem] overflow-hidden">
+                <div className="w-2/3 md:w-[42rem] md:h-[42rem] overflow-hidden">
                   <img
                     src="/assets/special-2.png"
                     alt="Setrika"
@@ -466,8 +481,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute top-0 md:top-[0.5rem] right-0 z-10 w-full pt-96 text-aos-animation-2">
-                <div className="bg-white shadow-xl px-10 py-14 md:py-20 md:w-1/2">
+              <div className="absolute -top-[15rem] md:top-[0.5rem] left-0 md:left-[7rem] z-10 w-full pt-96 text-aos-animation-2">
+                <div className="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] px-7 md:px-10 py-10 md:py-20 w-2/3 md:w-1/3">
                   <p className="text-xl">Dengan pelicin tanpa kandungan alkohol</p>
                 </div>
               </div>
@@ -475,7 +490,7 @@ export default function Home() {
             
             <div className="relative mt-[10rem]">
               <div className="flex justify-end w-full">
-                <div className="w-full md:w-[38rem] md:h-[38rem] overflow-hidden">
+                <div className="w-2/3 md:w-[38rem] md:h-[38rem] overflow-hidden">
                   <img
                     src="/assets/special-3.png"
                     alt="Setrika"
@@ -485,7 +500,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex w-full mt-10">
-                <div className="w-full md:w-[38rem] md:h-[38rem] overflow-hidden">
+                <div className="w-2/3 md:w-[38rem] md:h-[38rem] overflow-hidden">
                   <img
                     src="/assets/special-4.png"
                     alt="Setrika"
@@ -495,8 +510,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute left-0 top-32 flex justify-center z-10 w-full pt-96 text-aos-animation-3">
-                <div className="bg-white shadow-xl px-10 py-20 w-[22rem]">
+              <div className="absolute left-0 -top-[14rem] md:top-32 flex justify-center z-10 w-full pt-96 text-aos-animation-3">
+                <div className="bg-white shadow-[0_0_35px_rgba(0,0,0,0.25)] px-7 md:px-10 py-14 md:py-20 w-3/4 md:w-[22rem]">
                   <p className="text-xl">Ketahanan wangi yang lama membuat anda percaya diri untuk menjalani hari</p>
                 </div>
               </div>
@@ -505,15 +520,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div id='produk-kami' className='w-full flex justify-center overflow-hidden'>
-        <div className="container mx-auto px-5 xl:px-20">
+      <div id='produk-kami' className='w-full overflow-hidden'>
+        <div className="container mx-auto md:px-5 xl:px-20">
           <div className="flex flex-col md:flex-row items-center mb-8">
             <h1 className='text-3xl md:text-5xl md:leading-[4.5rem] font-bold text-center md:text-left'>Produk Kami</h1>
             <Link href="/product" className="text-gray-500 underline md:ml-auto">Lihat Semua Produk</Link>
           </div>
-          <div className="w-full overflow-hidden relative pb-20"> 
-            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-5 md:w-10 z-10"></div>
-            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-5 md:w-10 z-10"></div>
+        </div>
+        
+        <div className="w-full overflow-hidden relative pb-20"> 
             <img
               src="/assets/group-gelembung-1.png"
               alt="Gelembung"
@@ -532,10 +547,10 @@ export default function Home() {
               className="w-full h-full absolute -bottom-24 left-0 group-gelembung-3"
               style={{ objectFit: "contain" }}
             />
-            <div className="draggable-container w-max pl-[66rem] -left-[64rem] md:pl-[20rem] md:-left-[14rem] 2xl:pl-[3rem] 2xl:-left-[1rem] pb-14 relative ">
+            <div className="draggable-container cursor-grab w-max pl-[45rem] -left-[43rem] md:pl-[20rem] md:-left-[10rem] 2xl:pl-[3rem] 2xl:-left-[1rem] pb-14 relative ">
               <div className="draggable-slide w-fit flex gap-5">
-                <Link href="/product?tab=pelicin" className="group w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[27rem] overflow-hidden">
+                <Link href="/product?tab=pelicin" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
                       src="/assets/pelicin-pakaian.png"
                       alt="Pelicin pakaian"
@@ -547,8 +562,8 @@ export default function Home() {
                     <p className="">PELICIN <br></br> PAKAIAN</p>
                   </div>
                 </Link>
-                <Link href="/product?tab=detergent" className="group w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[27rem] overflow-hidden">
+                <Link href="/product?tab=detergent" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
                       src="/assets/detergen.png"
                       alt="Detergen"
@@ -560,8 +575,8 @@ export default function Home() {
                     <p className="">DETERGEN</p>
                   </div>
                 </Link>
-                <Link href="/product?tab=softener" className="group w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[27rem] overflow-hidden">
+                <Link href="/product?tab=softener" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
                       src="/assets/softener.png"
                       alt="Softener"
@@ -573,8 +588,8 @@ export default function Home() {
                     <p className="">SOFTENER</p>
                   </div>
                 </Link>
-                <Link href="/product?tab=sabun" className="group w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[27rem] overflow-hidden">
+                <Link href="/product?tab=sabun" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
+                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
                       src="/assets/sabun-cuci-piring.png"
                       alt="Sabun Cuci Piring"
@@ -589,7 +604,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
       </div>
 
       <div id='produk-terjual' className='relative top-0 left-0 w-full h-[26rem] md:h-[41rem] flex justify-center overflow-hidden'>
@@ -610,12 +624,12 @@ export default function Home() {
       </div>
 
       <div id='ulasan-pelanggan' className='w-full flex justify-center overflow-hidden'>
-        <div className="container mx-auto px-5 xl:px-20 relative">
-          <h1 className='text-4xl md:text-5xl mb-3 font-bold'>Ulasan Pelanggan</h1>
-          <h1 className='text-xl'>Kepuasan pelanggan adalah prioritas kami</h1>
+        <div className="container mx-auto md:px-5 xl:px-20 relative">
+          <h1 className='text-4xl md:text-5xl mb-3 font-bold text-center md:text-start'>Ulasan Pelanggan</h1>
+          <h1 className='text-xl text-center md:text-start'>Kepuasan pelanggan adalah prioritas kami</h1>
           <div className="body__inner-wrapper pt-10 pb-20 relative">
-            <div className="bg-gradient-to-r from-white absolute top-0 left-0 h-full w-5 md:w-10 z-20"></div>
-            <div className="bg-gradient-to-l from-white absolute top-0 right-0 h-full w-5 md:w-10 z-20"></div>
+            <div className="bg-gradient-to-r from-white hidden md:block absolute top-0 left-0 h-full w-5 md:w-10 z-20"></div>
+            <div className="bg-gradient-to-l from-white hidden md:block absolute top-0 right-0 h-full w-5 md:w-10 z-20"></div>
             <div className="marquee pb-5">
               <div className="marquee__inner-wrap">
                 <div className="marquee__inner">
