@@ -118,6 +118,7 @@ const Navbar = () => {
             width: 100%;
             padding: 10px 0;
             text-align: center;
+            box-shadow: 0px 15px 14px 0px #56565660;
           }
           .mobile-menu-button {
             display: flex;

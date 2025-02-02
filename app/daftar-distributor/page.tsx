@@ -1,138 +1,115 @@
 'use client';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function DaftarDistributor() {
     return (
         <div>
-            <div id='hero' className='relative top-0 left-0 w-full flex justify-center overflow-hidden'>
-                <img
-                    src="/assets/bg-tentang-kami-hero.jpg"
-                    alt="BG Hero"
-                    className="w-full h-96 parallax-hero"
-                    style={{ objectFit: "cover" }}
-                />
-            </div>
-            <div id='quotes' className='relative top-0 left-0 w-full flex justify-center items-center overflow-hidden'>
-                <div className="container mx-auto px-5 xl:px-20 py-10 md:py-20 text-center md:text-start md:flex items-center gap-10">
-                    <div className="md:w-1/2 mb-5 md:mb-0">
-                        <p className="text-3xl md:text-4xl font-semibold">Pilihan terpercaya untuk keluarga anda</p>
-                    </div>
-                    <div className="md:w-1/2">
-                        <p><b>CV Bikaro Harum Indonesia</b> adalah perusahaan yang  bergerak di bidang produk <b>pelembut pakaian, deterjen cair, pewangi pakaian, dan sabun cuci piring</b>, kami berkomitmen memberikan solusi praktis dan terpercaya untuk rumah tangga modern.</p>
-                    </div>
+            <div id='hero' className='relative top-0 left-0 w-full h-screen md:h-[28rem] flex bg-[#E9ECFF] justify-center overflow-hidden'>
+            <div className="container mx-auto px-5 xl:px-20 pt-10 text-black md:flex justify-center">
+                <div className='md:w-1/2'>
+                    <h1 className='text-3xl md:text-5xl md:leading-[4rem] font-medium text-center md:text-left mt-32'>Daftar jadi <span className='text-[#06246C]'>Distributor</span></h1>
+                    <h1 className='text-3xl md:text-5xl md:leading-[4rem] font-medium text-center md:text-left'>dan dapatkan</h1>
+                    <h1 className='text-3xl md:text-5xl md:leading-[4rem] font-medium text-center md:text-left'>penawaran <span className='text-[#06246C]'>khusus</span></h1>
+                </div>
+                <div className='min-h-96 md:w-1/2 relative'>
+                    <img
+                        src="/assets/daftar_distributor_hero_image.png"
+                        alt="daftar distributor hero"
+                        className="w-full h-full absolute left-0 top-5 scale-[115%] md:scale-[120%] rotate-[1deg]"
+                        style={{ objectFit: "cover" }}
+                    />
                 </div>
             </div>
-            <div id='lokasi' className='relative top-0 left-0 w-full flex justify-center items-center'>
-                <div className="container mx-auto px-5 xl:px-20 py-5 text-center md:text-start md:flex items-center gap-10">
-                    <div className="md:w-1/2 mb-5 md:mb-0">
-                        <p className="text-xl md:text-3xl font-semibold">Lokasi Perusahaan Kami</p>
-                        <p className="text-xl md:text-2xl font-medium">Headquarters</p>
-                        <p className="">KP. Jalan Bojong,</p>
-                        <p className="">RT.11/RW.5,</p>
-                        <p className="">Kampung Bojong,</p>
-                        <p className="">Klapa Nunggal (Kelapa Nunggal)</p>
-                        <br />
-                        <p className="">Senin - Jumat (09.00 - 17.00)</p>
-                        <a target='_blank' href="https://api.whatsapp.com/send?phone=628568790783"><p className="">(+62) - 8568790783</p></a>
-                        <a target='_blank' href="mailto:bikaroindonesia@gmail.com"><p>bikaroindonesia@gmail.com</p></a>
-
-                    </div>
-                    <div className="md:w-1/2 md:p-5">
-                        <div className="map-container overflow-hidden rounded-xl shadow-xl">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.288514546297!2d107.015082!3d-6.4397105!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69960e1d4225bb%3A0x17f6613189d588ac!2sJl.%20Bojong%2C%20Bojong%2C%20Kec.%20Klapanunggal%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016710!5e0!3m2!1sid!2sid!4v1738310985528!5m2!1sid!2sid"
-                                width="600"
-                                height="450"
-                                style={{ border: 0 }}
-                                allowFullScreen
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                            />
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div id='hubungi-kami' className='relative top-0 left-0 w-full flex justify-center items-center mb-5'>
-                <div className="container mx-auto px-5 xl:px-20 py-5 text-center md:text-start md:flex items-center gap-10">
-                    <div className="md:w-1/2 mb-5 md:mb-0">
-                        <p className="text-xl md:text-3xl font-semibold mb-3">Hubungi Kami</p>
-                        <p className="">Email, Whatsapp, atau Direct Message Social media
-                        kami untuk informasi lebih lanjut.</p>
-                        <br />
-                        <div className='flex md:block justify-center'>
-                            <div className='text-start'>
-                                <a target='_blank' href="mailto:bikaroindonesia@gmail.com"><p>bikaroindonesia@gmail.com</p></a>
-                                <a target='_blank' href="https://api.whatsapp.com/send?phone=628568790783">
-                                    <div className='flex items-center'>
-                                    <Image
-                                        src="/assets/whatsapp_icon_blue.png" // Path ke gambar di folder public
-                                        alt="Whatsapp Bikaro Harum Indonesia"
-                                        width={80} // Lebar gambar
-                                        height={80} // Tinggi gambar
-                                        priority
-                                        className="w-5 h-5 mr-2"
-                                    />
-                                    <p>(+62) - 8568790783</p>
-                                    </div>
-                                </a>
-                                <a target='_blank' href="https://www.instagram.com/bikaro.official">
-                                    <div className='flex items-center'>
-                                    <Image
-                                        src="/assets/instagram_icon_blue.png" // Path ke gambar di folder public
-                                        alt="Instagram Bikaro Harum Indonesia"
-                                        width={80} // Lebar gambar
-                                        height={80} // Tinggi gambar
-                                        priority
-                                        className="w-5 h-5 mr-2"
-                                    />
-                                    <p>@bikaro.official</p>
-                                    </div>
-                                </a>
-                                <a target='_blank' href="https://id.shp.ee/WXuyDSC">
-                                    <div className='flex items-center'>
-                                    <Image
-                                        src="/assets/shopee_icon_blue.png" // Path ke gambar di folder public
-                                        alt="Shopee Bikaro Harum Indonesia"
-                                        width={80} // Lebar gambar
-                                        height={80} // Tinggi gambar
-                                        priority
-                                        className="w-5 h-5 mr-2"
-                                    />
-                                    <p>Fresh Mist</p>
-                                    </div>
-                                </a>
-                                <a target='_blank' href="https://www.tiktok.com/@bikaro.indonesia">
-                                    <div className='flex items-center'>
-                                    <Image
-                                        src="/assets/tiktok_icon_blue.png" // Path ke gambar di folder public
-                                        alt="Tiktok Bikaro Harum Indonesia"
-                                        width={80} // Lebar gambar
-                                        height={80} // Tinggi gambar
-                                        priority
-                                        className="w-5 h-5 mr-2"
-                                    />
-                                    <p>@bikaro.indonesia</p>
-                                    </div>
-                                </a>
+            <div id='distributor' className='relative top-0 left-0 w-full overflow-hidden'>
+                <div className="container mx-auto px-5 xl:px-20 pt-20 pb-5 text-center">
+                    <p className='text-4xl font-bold'>Distributor Kami</p>
+                </div>
+                <div className="container mx-auto px-5 xl:px-20 py-10">
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10'>
+                        <div className='border border-[#D9D9D9] rounded-xl px-4 py-5 text-black '>
+                            <div className='h-[15rem] w-full overflow-hidden rounded-lg group shadow-lg'>
+                                <img className='h-full w-full object-cover group-hover:scale-125 transition' src="/assets/sumatera-barat.png" alt="Peta Sumatera Barat" />
                             </div>
+                            <p className='text-medium text-2xl'>Sumatera Barat</p>
+                            <div className='md:h-14' >
+                            </div>
+                            <Link href="https://api.whatsapp.com/send?phone=6285278015851" className='bg-[#10BB00] flex gap-2 items-center justify-center text-white py-2 my-4 rounded-md transition-all hover:bg-white border border-[#10BB00] hover:text-[#10BB00]'>
+                                <i className="bi bi-whatsapp font-bold ml-2"></i>  
+                                <p>Hubungi via Whatsapp</p>
+                            </Link>
+                            <p className='text-sm text-justify'>Kampung Lalang jorong bukit Malintang Nagari alahan mati kecamatan Simpang alahan mati kabupaten pasaman provinsi Sumatera Barat</p>
+                        </div>
+                        <div className='border border-[#D9D9D9] rounded-xl px-4 py-5 text-black '>
+                            <div className='h-[15rem] w-full overflow-hidden rounded-lg group shadow-lg'>
+                                <img className='h-full w-full object-cover group-hover:scale-125 transition' src="/assets/kabupaten-tangerang.png" alt="Peta Sumatera Barat" />
+                            </div>
+                            <p className='text-medium text-2xl mb-2'>Kabupaten Tangerang</p>
+                            
+                            <div className='' >
+                                <a className='flex items-center text-sm' target='_blank' href="https://id.shp.ee/WXuyDSC"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/shopee_shop_icon.png" alt="Shopee Icon" /> Toko Khanza17</a>
+                                <a className='flex items-center text-sm' target='_blank' href="https://www.tiktok.com/@freshmist.official"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/tiktok_shop_icon.png" alt="Tiktok Shop Icon" /> Toko.Khanza17</a>
+                            </div>
+                            <Link href="https://api.whatsapp.com/send?phone=628888372371" className='bg-[#10BB00] flex gap-2 items-center justify-center text-white py-2 my-4 rounded-md transition-all hover:bg-white border border-[#10BB00] hover:text-[#10BB00]'>
+                                <i className="bi bi-whatsapp font-bold ml-2"></i>    
+                                <p>Hubungi via Whatsapp</p>
+                            </Link>
+                            <p className='text-sm text-justify'>Perum Taman Laguna Blok LC 06 RT 010 / RW 002 Desa Sukaharja Kec. Sindang Jaya Kab. Tangerang. 15560</p>
+                        </div>
+                        <div className='border border-[#D9D9D9] rounded-xl px-4 py-5 text-black '>
+                            <div className='h-[15rem] w-full overflow-hidden rounded-lg group shadow-lg'>
+                                <img className='h-full w-full object-cover group-hover:scale-125 transition' src="/assets/jakarta-barat.png" alt="Peta Sumatera Barat" />
+                            </div>
+                            <p className='text-medium text-2xl mb-2'>Jakarta Barat</p>
+                            <div className='' >
+                                <a className='flex items-center text-sm' target='_blank' href="https://id.shp.ee/WXuyDSC"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/shopee_shop_icon.png" alt="Shopee Icon" /> zaima store </a>
+                                <a className='flex items-center text-sm' target='_blank' href="https://www.tiktok.com/@freshmist.official"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/lazada_shop_icon.png" alt="Lazada Shop Icon" /> zaima store</a>
+                            </div>
+                            <Link href="https://api.whatsapp.com/send?phone=6287885405383" className='bg-[#10BB00] flex gap-2 items-center justify-center text-white py-2 my-4 rounded-md transition-all hover:bg-white border border-[#10BB00] hover:text-[#10BB00]'>
+                                <i className="bi bi-whatsapp font-bold ml-2"></i>    
+                                <p>Hubungi via Whatsapp</p>
+                            </Link>
+                            <p className='text-sm text-justify'>Kp. Baru Simpang 3 No.120 RT.005 RW.08 Kel. Pegadungan Kec. Kalideres, Jakarta Barat Kode Pos : 11830</p>
                         </div>
                     </div>
-                    <div className="md:w-1/2 md:pr-5">
-                        <div className="bg-[#06246C] rounded-xl px-4 md:px-10 py-5">
-                            <p className="font-bold text-2xl mb-5 text-white">Kirim Kami Pesan</p>
-                            <form action="">
-                            <input className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" type="text" placeholder="Nama" />
-                            <input className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" type="text" placeholder="Email" />
-                            <input className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" type="text" placeholder="No Telepon" />
-                            <textarea rows={4} className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" name="" id="" placeholder="Apa yang bisa kami bantu?"></textarea>
-
-                            <button className="w-full rounded-lg px-4 py-3 mb-3 bg-white border border-white font-bold cursor-pointer flex items-center justify-center shadow-lg hover:bg-transparent hover:text-white"> 
-                                Kirim
-                                <i className="bi bi-send-fill font-bold ml-2"></i>          
-                            </button>
-                            
-                            </form>
+                </div>
+            </div>
+            <div id='bergabung-distributor' className='relative w-full md:h-[32rem] overflow-hidden'>
+                <img src="/assets/bg-daftar-distributor.png" className='absolute left-0 top-0 z-1 w-full h-full object-cover' alt="Background" />
+                <div className="container mx-auto px-5 xl:px-20 pt-8 md:pt-20 pb-8 text-center relative">
+                    <div className='md:flex'>
+                        <div className='md:w-1/2 mb-10 md:mb-0 px-10 flex justify-center items-center'>
+                            <img src="/assets/image-daftar-distributor.png" className='md:h-96 object-containS' alt="Daftar Distributor" />
+                        </div>
+                        <div className='md:w-1/2 flex flex-col justify-center items-center md:items-start md:text-start font-bold'>
+                            <p className='text-4xl mb-4'>Ingin Bergabung Menjadi Distributor ?</p>
+                            <a href='https://api.whatsapp.com/send?phone=628568790783'>
+                                <div className='bg-[#06246C] text-center text-white w-auto px-5 py-2 rounded-md shadow-lg border-2 border-[#06246C] hover:text-[#06246C] hover:bg-transparent'>
+                                    Hubungi Kami
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='gallery' className='relative w-full overflow-hidden'>
+                <div className="container mx-auto px-5 xl:px-20 pt-8 md:pt-20 pb-20 text-center relative">
+                    <p className='text-3xl font-bold md:text-start mb-10'>Gallery</p>
+                    <div className='md:flex gap-5'>
+                        <div className='md:w-1/3'>
+                            <Link href="/assets/gallery/1.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/1.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/4.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/4.jpg" alt="" /></Link>
+                        </div>
+                        <div className='md:w-1/3'>
+                            <Link href="/assets/gallery/2.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/2.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/5.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/5.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/7.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/7.jpg" alt="" /></Link>
+                        </div>
+                        <div className='md:w-1/3'>
+                            <Link href="/assets/gallery/3.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/3.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/6.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/6.jpg" alt="" /></Link>                        
                         </div>
                     </div>
                 </div>

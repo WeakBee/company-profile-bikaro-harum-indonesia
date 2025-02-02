@@ -9,7 +9,7 @@ export default function TentangKami() {
                 <img
                     src="/assets/bg-tentang-kami-hero.jpg"
                     alt="BG Hero"
-                    className="w-full h-96 parallax-hero"
+                    className="w-full h-96"
                     style={{ objectFit: "cover" }}
                 />
             </div>
@@ -42,7 +42,7 @@ export default function TentangKami() {
                         <div className="map-container overflow-hidden rounded-xl shadow-xl">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.288514546297!2d107.015082!3d-6.4397105!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69960e1d4225bb%3A0x17f6613189d588ac!2sJl.%20Bojong%2C%20Bojong%2C%20Kec.%20Klapanunggal%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016710!5e0!3m2!1sid!2sid!4v1738310985528!5m2!1sid!2sid"
-                                width="600"
+                                width="100%"
                                 height="450"
                                 style={{ border: 0 }}
                                 allowFullScreen
