@@ -178,7 +178,7 @@ export default function Product() {
                 <div className="container mx-auto px-5 xl:px-20 pt-36 pb-24 text-white">
                     <div>
                         <h1 className='hero-text-animation text-3xl mb-2 md:text-5xl md:leading-[4.5rem] font-medium text-center md:text-left'>Produk</h1>
-                        <h1 className='hero-text-animation text-lg md:text-xl text-center md:text-left'>Kami memiliki produk berkualitas yang sudah<br className="hidden md:block"/>digunakan di berbagai wilayah Indonesia dengan<br className="hidden md:block"/>harga terjangkau</h1>
+                        <h1 className='hero-text-animation text-lg md:text-xl text-center md:text-left'>Kami memiliki produk berkualitas yang sudah<br className="hidden md:block"/> digunakan di berbagai wilayah Indonesia dengan<br className="hidden md:block"/> harga terjangkau</h1>
                     </div>
                 </div>
             </div>
