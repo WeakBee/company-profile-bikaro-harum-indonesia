@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -411,6 +411,44 @@ const TestimonialCards2 = () => {
 };
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    nama: "",
+    email: "",
+    telepon: "",
+    pesan: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage(null); // Reset message on new submission
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      setMessage(data.success ? "Email terkirim!" : `Error: ${data.error}`);
+      setFormData({ nama: "", email: "", telepon: "", pesan: "" });
+    } catch (error) {
+      console.log(error);
+      setMessage("Terjadi kesalahan saat mengirim email.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       <div id='hero' className='relative top-0 left-0 w-full h-screen md:h-[41rem] flex justify-center overflow-hidden'>
@@ -661,18 +699,54 @@ export default function Home() {
             <div className="md:w-3/5 px-4 md:px-10">
               <div className="bg-[#06246C] rounded-xl px-4 md:px-10 py-5">
                 <p className="font-bold text-2xl mb-5 text-white">Kirim Kami Pesan</p>
-                <form action="">
-                  <input className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" type="text" placeholder="Nama" />
-                  <input className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" type="text" placeholder="Email" />
-                  <input className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" type="text" placeholder="No Telepon" />
-                  <textarea rows={4} className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg" name="" id="" placeholder="Apa yang bisa kami bantu?"></textarea>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg"
+                    type="text"
+                    placeholder="Nama"
+                    name="nama"
+                    value={formData.nama}
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg"
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg"
+                    type="text"
+                    placeholder="No Telepon"
+                    name="telepon"
+                    value={formData.telepon}
+                    onChange={handleChange}
+                    required
+                  />
+                  <textarea
+                    rows={4}
+                    className="w-full rounded-lg px-4 py-3 mb-3 shadow-lg"
+                    placeholder="Apa yang bisa kami bantu?"
+                    name="pesan"
+                    value={formData.pesan}
+                    onChange={handleChange}
+                    required
+                  ></textarea>
 
-                  <button className="w-full rounded-lg px-4 py-3 mb-3 bg-white border border-white font-bold cursor-pointer flex items-center justify-center shadow-lg hover:bg-transparent hover:text-white"> 
-                    Kirim
-                    <i className="bi bi-send-fill font-bold ml-2"></i>          
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg px-4 py-3 mb-3 bg-white border border-white font-bold cursor-pointer flex items-center justify-center shadow-lg hover:bg-transparent hover:text-white"
+                    disabled={loading}
+                  >
+                    {loading ? "Mengirim..." : "Kirim"}
+                    <i className="bi bi-send-fill font-bold ml-2"></i>
                   </button>
-                  
                 </form>
+                {message && <p className="text-white mt-3">{message}</p>}
               </div>
             </div>
           </div>

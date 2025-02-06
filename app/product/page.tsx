@@ -20,7 +20,7 @@ type ProductType = {
     categorycolor: string;
     image: string;
     star: number;
-    selled: number;
+    selled: string;
     description: string;
 };
 
@@ -46,7 +46,7 @@ const AllAnimation = () => {
 const products = [
     {name: 'Sexy Red', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sexy_red.webp', 
         star : 4.9,
-        selled : 2500,
+        selled : "10rb",
         description:`Varian Sexy Red dengan aromanya yang elegant FreshMist 3 in 1 Pelicin, Pelembut & Pengharum pakaian isi bersih 1 Liter (1000mL) yang dapat membuat setrika anda menjadi lebih mudah, wangi & menyenangkan.<br>Menjaga kesegaran pakaian dengan wangi yang tahan lama membuat baju harum dan lebih rapih.
                 <br><b>Takaran Penggunaan:</b> 40 - 80 mL untuk setiap 20 potong pakaian (dapat disesuaikan dengan kebutuhan dan selera).
                 <br><b>Keunggulan Fresh Mist :</b>
@@ -57,7 +57,7 @@ const products = [
                 <br>- Formulasi Anti Bakteri, menjaga baju agar tidak mudah bau apek` },
     { name: 'Sweet Secret', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sweet_secret.webp', 
         star : 4.9,
-        selled : 4000,
+        selled : "10rb",
         description:`Varian Sweet Secret dengan aroma khas laundry, fresh segar, wangi bunga akasia premium
                 FreshMist 3 in 1 Pelicin, Pelembut & Pengharum pakaian isi bersih 1 Liter (1000mL) yang dapat membuat setrika anda menjadi lebih mudah, wangi & menyenangkan.<br>Menjaga kesegaran pakaian dengan wangi yang tahan lama membuat baju harum dan lebih rapih.
                 <br><b>Takaran Penggunaan:</b> 40 - 80 mL untuk setiap 20 potong pakaian (dapat disesuaikan dengan kebutuhan dan selera)
@@ -70,7 +70,7 @@ const products = [
     },
     { name: 'Blue Fantasy', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/blue_fantasy.webp', 
         star : 4.9,
-        selled : 1500,
+        selled : "10rb",
         description:`Varian Blue Fantasy dengan aromanya yang segar lembut dari aroma philux, serta ada aroma manis
                 FreshMist 3 in 1 Pelicin, Pelembut & Pengharum pakaian isi bersih 1 Liter (1000mL) yang dapat membuat setrika anda menjadi lebih mudah, wangi & menyenangkan. Menjaga kesegaran pakaian dengan wangi yang tahan lama membuat baju harum dan lebih rapih.
                 <br><b>Takaran Penggunaan:</b> 40 - 80 mL untuk setiap 20 potong pakaian (dapat disesuaikan dengan kebutuhan dan selera)
@@ -82,7 +82,7 @@ const products = [
                 <br> - Formulasi Anti Bakteri, menjaga baju agar tidak mudah bau apek` },
     { name: 'Sakura', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/sakura.webp', 
         star : 4.9,
-        selled : 1500,
+        selled : "10rb",
         description:`Varian Sakura dengan aromanya yang lembut, fresh dan wangi bunga sakura
                 FreshMist 3 in 1 Pelicin, Pelembut & Pengharum pakaian isi bersih 1 Liter (1000mL) yang dapat membuat setrika anda menjadi lebih mudah, wangi & menyenangkan. Menjaga kesegaran pakaian dengan wangi yang tahan lama membuat baju harum dan lebih rapih.
                 <br><b>Takaran Penggunaan:</b> 40 - 80 mL untuk setiap 20 potong pakaian (dapat disesuaikan dengan kebutuhan dan selera)
@@ -94,7 +94,7 @@ const products = [
                 <br> - Formulasi Anti Bakteri, menjaga baju agar tidak mudah bau apek ` },
     { name: 'Soft Baby', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/soft_baby.webp', 
         star : 4.9,
-        selled : 2500,
+        selled : "10rb",
         description:`Varian Soft Baby dengan aromanya yang lembut, kalem, aroma bedak bayi,
                 FreshMist 3 in 1 Pelicin, Pelembut & Pengharum pakaian isi bersih 1 Liter (1000mL) yang dapat membuat setrika anda menjadi lebih mudah, wangi & menyenangkan. Menjaga kesegaran pakaian dengan wangi yang tahan lama membuat baju harum dan lebih rapih.
                 <br><b>Takaran Penggunaan:</b> 40 - 80 mL untuk setiap 20 potong pakaian (dapat disesuaikan dengan kebutuhan dan selera)
@@ -106,7 +106,7 @@ const products = [
                 <br> - Formulasi Anti Bakteri, menjaga baju agar tidak mudah bau apek` },
     { name: 'Aurora', category: 'pelicin', categoryname:'Pelicin', categorycolor: '#69DAFF', image: '/assets/product/aurora.webp', 
         star : 4.9,
-        selled : 1500,
+        selled : "10rb",
         description:`Varian Aurora dengan aromanya yang segar & manis campuran wangi buah-buahan , serta aroma mewah yang terinspirasi dari parfum taylor swift
                 FreshMist 3 in 1 Pelicin, Pelembut & Pengharum pakaian isi bersih 1 Liter (1000mL) yang dapat membuat setrika anda menjadi lebih mudah, wangi & menyenangkan. Menjaga kesegaran pakaian dengan wangi yang tahan lama membuat baju harum dan lebih rapih.
                 <br>Takaran Penggunaan: 40 - 80 mL untuk setiap 20 potong pakaian (dapat disesuaikan dengan kebutuhan dan selera)
@@ -118,36 +118,36 @@ const products = [
                 <br> - Formulasi Anti Bakteri, menjaga baju agar tidak mudah bau apek ` },
     { name: 'Philly', category: 'detergent', categoryname:'Detergent', categorycolor: '#5CF653', image: '/assets/product/philly.webp', 
         star : 4.8,
-        selled : 150,
+        selled : "5rb",
         description:`Philly detergent dari FreshMist membantu kegiatan mencuci baju anda jadi lebih mudah dengan harga yang terjangkau memiliki busa yang melimpah siap mengangkat segala kotoran yang membandel
                 Pilihan hemat & tepat untuk kamu mencuci baju` },
     { name: 'Lovely', category: 'detergent', categoryname:'Detergent', categorycolor: '#5CF653', image: '/assets/product/lovely.webp', 
         star : 4.8,
-        selled : 200,
+        selled : "5rb",
         description:`Philly detergent dari FreshMist membantu kegiatan mencuci baju anda jadi lebih mudah dengan harga yang terjangkau memiliki busa yang melimpah siap mengangkat segala kotoran yang membandel
                 Pilihan hemat & tepat untuk kamu mencuci baju` },
     { name: 'Silky', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/silky.webp',  
         star : 4.9,
-        selled : 100,
+        selled : "7rb",
         description:`Silky softener dengan aroma khas laundry yang segar, wangi bunga akasia premium menjadikan mencuci anda mudah, wangi & menyenangkan, dengan wangi yang tahan lama.
                 Softener dari FreshMist membantu membuat wangi pakaian anda setelah di cuci tanpa perlu dibilas` },
     { name: 'Delicate Blue', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/delicate_blue.webp', 
         star : 5.0,
-        selled : 250,
+        selled : "7rb",
         description:`Delicate Blue softener dengan aroma khas philux yang segar kalem menjadikan mencuci anda mudah, wangi & menyenangkan, dengan wangi yang tahan lama. NETTO: 1000 mL
                 Softener dari FreshMist membantu membuat wangi pakaian anda setelah di cuci tanpa perlu dibilas` },
     { name: 'Fluffy Pink', category: 'softener', categoryname:'Softener', categorycolor: '#E484FF', image: '/assets/product/fluffy_pink.webp', 
         star : 4.8,
-        selled : 350,
+        selled : "7rb",
         description:`Fluffy Pink dengan aromanya yang Elegant, Fresh, Sweet & Soft menjadikan mencuci anda mudah, wangi & menyenangkan, dengan wangi yang tahan lama. NETTO: 1000 mL
                 Softener dari FreshMist membantu membuat wangi pakaian anda setelah di cuci tanpa perlu dibilas` },
     { name: 'Lemon Scent', category: 'sabun', categoryname:'Sabun Cuci Piring', categorycolor: '#F75858', image: '/assets/product/lemon_scent.webp', 
         star : 4.75,
-        selled : 50,
+        selled : "5rb",
         description:`Pembersih peralatan dapur dengan grase off technology yang efektif mengangkat lemak membandel dan menghilangkan bau tak sedap pada peralatan dapur anda.` },
     { name: 'Lime Sans', category: 'sabun', categoryname:'Sabun Cuci Piring', categorycolor: '#F75858', image: '/assets/product/lime_sans.webp', 
         star : 4.7,
-        selled : 50,
+        selled : "5rb",
         description:`Pembersih peralatan dapur dengan grase off technology yang efektif mengangkat lemak membandel dan menghilangkan bau tak sedap pada peralatan dapur anda.` },
   ];
 
