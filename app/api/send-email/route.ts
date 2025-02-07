@@ -9,15 +9,15 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "ichwanulmuslim9h@gmail.com", // Ganti dengan Gmail kamu
-        pass: "cszw jgyk bhpz vthe", // Masukkan App Password dari Google
+        user: "bikarowebsite@gmail.com", // Ganti dengan Gmail kamu
+        pass: "xpld csqm ycoo zxam", // Masukkan App Password dari Google
       },
     });
 
     // Kirim email
     const mailOptions = {
-      from: "ichwanulmuslim9h@gmail.com", // Pengirim
-      to: "projectichwan@gmail.com", // Ganti dengan penerima yang sesuai
+      from: "bikarowebsite@gmail.com", // Pengirim
+      to: "bikaroindonesia@gmail.com", // Ganti dengan penerima yang sesuai
       subject: `[Kirim Pesan] Website CV Bikaro Harum Indonesia - ${nama}`,
       text: `Nama: ${nama}\nEmail: ${email}\nTelepon: ${telepon}\nPesan: ${pesan}`,
     };
