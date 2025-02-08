@@ -263,43 +263,43 @@ const AllAnimation = () => {
 const cards = [
     {
       name: "A**a",
-      time: "08.11 WIB - Jan, 2025",
+      time: "Januari, 2025",
       stars: 5,
       testimonial: "Paket pengharumnya sangat wangi bener - bener wangi serasa ditempat laundry, disemprotin ke lemari juga biar wangi, makasih ya, next order lg yg varian lain"
   },
   {
       name: "L**y",
-      time: "12.47 WIB - Oct, 2024",
+      time: "Oktober, 2024",
       stars: 5,
       testimonial: "Wangi segar,pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba."
   },
   {
       name: "M**a",
-      time: "07.12 WIB - Dec, 2024",
+      time: "Desember, 2024",
       stars: 5,
       testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah."
   },
   {
       name: "D**e",
-      time: "19.55 WIB - Mar, 2024",
+      time: "Maret, 2024",
       stars: 5,
       testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu."
   },
   {
       name: "A**u",
-      time: "11.02 WIB - Mar, 2024",
+      time: "Maret, 2024",
       stars: 5,
       testimonial: "Wangi ok ya smg lembut bantu biar baju g kusut hahaha."
   },
   {
       name: "c**a",
-      time: "08.31 WIB - Apr, 2024",
+      time: "April, 2024",
       stars: 5,
       testimonial: "Paket pewangi udh sampai wanginya enak, blum sy coba buat gosok mudhan tahan lama kayak di londri, toko nya amanah, bang kurir baik sopan udh langganan."
   },
   {
       name: "R**S",
-      time: "10.30 WIB - Mar, 2024",
+      time: "Maret, 2024",
       stars: 5,
       testimonial: "Alhamdulillah bagus, wanginya kalem, lumayan buat stock slma suka nyetrika, jd semanga buat nyetrika."
   }
@@ -338,43 +338,43 @@ const TestimonialCards = () => {
 const cards2 = [
   {
     name: "F**a",
-    time: "18.08 WIB - Dec, 2024",
+    time: "Desember, 2024",
     stars: 5,
     testimonial: "Aromanya soft, elegan dan tidak eneg kayak bau minyak wangi ntah itu merk lain",
   },
   {
     name: "u**7 N**l**h",
-    time: "22.04 WIB - Nov, 2024",
+    time: "November, 2024",
     stars: 5,
     testimonial: "YaAllah wanginya lembut, sy suka apa lg yg sakura, wanginya lembut bgt.",
   },
   {
     name: "G**g K**s K**i",
-    time: "14.32 WIB - Nov, 2024",
+    time: "November, 2024",
     stars: 5,
     testimonial: "Trimaksih paket nya sudah sampai, Wangi segerr saya syka. Pengiriman cepet bangtz. pesen kemarin hari ini sampai.",
   },
   {
     name: "m**",
-    time: "08.33 WIB - May, 2024",
+    time: "Mei, 2024",
     stars: 5,
     testimonial: "Asli, pas unboxing lgs harum bgt ga ngerti deg mw ngomong apa & ni pertama x beli next bli aroma lainnya krn kepo kek mna harumnya mna murah bgt tapi ga murahan wanginya, sukses selalu ya seller & kurir.",
   },
   {
     name: "L**y",
-    time: "16.24 WIB - Jan, 2024",
+    time: "Januari, 2024",
     stars: 5,
     testimonial: "Wangi segar, pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba.",
   },
   {
     name: "M**a",
-    time: "8.36 WIB - Jun, 2024",
+    time: "Juni, 2024",
     stars: 5,
     testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah.",
   },
   {
     name: "D**e",
-    time: "9.35 WIB - Jun, 2024",
+    time: "Juni, 2024",
     stars: 5,
     testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu Tuhan Yesis Kristus memberkati berlimpah.",
   },
