@@ -116,19 +116,29 @@ export default function DaftarDistributor() {
                     <p className='text-3xl font-bold md:text-start mb-10'>Gallery</p>
                     <div className='flex gap-5'>
                         <div className='w-1/2 md:w-1/3'>
-                            <Link href="/assets/gallery/1.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/1.jpg" alt="" /></Link>
-                            <Link href="/assets/gallery/4.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/4.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/1.jpeg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/1.jpeg" alt="" /></Link>
+                            <Link href="/assets/gallery/4.jpeg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/4.jpeg" alt="" /></Link>                 
+                            <Link href="/assets/gallery/8.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/8.jpg" alt="" /></Link>    
+                            <Link href="/assets/gallery/7.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/7.jpg" alt="" /></Link>       
                             <Link href="/assets/gallery/3.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/3.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/11.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/11.jpg" alt="" /></Link>
+                            <Link href="/assets/gallery/13.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/13.jpg" alt="" /></Link> 
                         </div>
                         <div className='w-1/2 md:w-1/3'>
                             <Link href="/assets/gallery/2.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/2.jpg" alt="" /></Link>
-                            <Link href="/assets/gallery/5.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/5.jpg" alt="" /></Link>
-                            <Link href="/assets/gallery/7.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/7.jpg" alt="" /></Link>
-                            <Link href="/assets/gallery/6.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/6.jpg" alt="" /></Link>   
+                            <Link href="/assets/gallery/5.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/5.jpg" alt="" /></Link>                        
+                            <Link href="/assets/gallery/9.png" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/9.png" alt="" /></Link>  
+                            <Link href="/assets/gallery/6.jpeg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/6.jpeg" alt="" /></Link>   
+                            <Link href="/assets/gallery/12.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/12.jpg" alt="" /></Link>   
+                            <Link href="/assets/gallery/10.jpg" target='_blank'><img className='w-full rounded-lg mb-5 block md:hidden' src="/assets/gallery/10.jpg" alt="" /></Link>  
                         </div>
                         <div className='hidden md:block md:w-1/3'>
                             <Link href="/assets/gallery/3.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/3.jpg" alt="" /></Link>
-                            <Link href="/assets/gallery/6.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/6.jpg" alt="" /></Link>                        
+                            <Link href="/assets/gallery/6.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/6.jpg" alt="" /></Link>                          
+                            <Link href="/assets/gallery/11.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/11.jpg" alt="" /></Link>                        
+                            <Link href="/assets/gallery/12.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/12.jpg" alt="" /></Link>                        
+                            <Link href="/assets/gallery/13.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/13.jpg" alt="" /></Link>                 
+                            <Link href="/assets/gallery/10.jpg" target='_blank'><img className='w-full rounded-lg mb-5' src="/assets/gallery/10.jpg" alt="" /></Link>                       
                         </div>
                     </div>
                 </div>
