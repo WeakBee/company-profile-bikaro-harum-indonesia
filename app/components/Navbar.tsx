@@ -76,26 +76,26 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={`menu md:flex gap-10 text-[#06246C] ${isMobileMenuOpen ? 'open' : ''}`}>
-          <div className={`font-bold flex justify-end ${isMobileMenuOpen ? 'block' : 'hidden'}`} onClick={toggleMobileMenu}>
+          <div className={`mb-3 md:mb-0 font-bold flex justify-end ${isMobileMenuOpen ? 'block' : 'hidden'}`} onClick={toggleMobileMenu}>
             X
           </div>
           <Link href="/" className="hover:underline nav-text-link">
-            <div>
+            <div className='mb-3 md:mb-0'>
               Home
             </div>
           </Link>          
           <Link href="/product" className="hover:underline nav-text-link">
-            <div>
+            <div className='mb-3 md:mb-0'>
               Produk
             </div>
           </Link>
           <Link href="/tentang-kami" className="hover:underline nav-text-link">
-            <div>
+            <div className='mb-3 md:mb-0'>
               Tentang Kami
             </div>
           </Link>
           <Link href="/daftar-distributor" className="hover:underline nav-text-link">
-            <div>
+            <div className='mb-3 md:mb-0'>
               Daftar Distributor
             </div>
           </Link>
