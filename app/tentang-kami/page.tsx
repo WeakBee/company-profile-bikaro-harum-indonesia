@@ -78,7 +78,7 @@ export default function TentangKami() {
                     <div className="md:w-1/2 md:p-5">
                         <div className="map-container overflow-hidden rounded-xl shadow-xl">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.288514546297!2d107.015082!3d-6.4397105!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69960e1d4225bb%3A0x17f6613189d588ac!2sJl.%20Bojong%2C%20Bojong%2C%20Kec.%20Klapanunggal%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016710!5e0!3m2!1sid!2sid!4v1738310985528!5m2!1sid!2sid"
+                                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1982.2886437441996!2d106.99720953818816!3d-6.448279533142318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjYnNTMuOCJTIDEwNsKwNTknNTQuNiJF!5e0!3m2!1sid!2sid!4v1739421361142!5m2!1sid!2sid"
                                 width="100%"
                                 height="450"
                                 style={{ border: 0 }}
@@ -150,6 +150,19 @@ export default function TentangKami() {
                                         className="w-5 h-5 mr-2"
                                     />
                                     <p>@bikaro.indonesia</p>
+                                    </div>
+                                </a>
+                                <a target='_blank' href="https://www.tiktok.com/@freshmist.official">
+                                    <div className='flex items-center'>
+                                    <Image
+                                        src="/assets/tiktok_icon_blue.png" // Path ke gambar di folder public
+                                        alt="Tiktok Bikaro Harum Indonesia"
+                                        width={80} // Lebar gambar
+                                        height={80} // Tinggi gambar
+                                        priority
+                                        className="w-5 h-5 mr-2"
+                                    />
+                                    <p>@freshmist.official</p>
                                     </div>
                                 </a>
                             </div>

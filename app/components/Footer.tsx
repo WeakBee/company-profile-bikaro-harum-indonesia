@@ -32,7 +32,7 @@ const Footer = () => {
                 priority
                 className="w-3 h-5 md:mr-1 mt-1"
               />
-              <p><Link className="hover:underline" target='_blank' href="https://maps.app.goo.gl/5LHQSdCBbfZ24ZQ77">KP. Jalan Bojong, RT.11/RW.5, Kampung Bojong, Klapa Nunggal (Kelapa Nunggal)</Link></p>
+              <p><Link className="hover:underline" target='_blank' href="https://maps.app.goo.gl/gSe7vc5AckSY4YjP8">Kab.Bogor, KP. Jalan Bojong, RT.11/RW.5, Kampung Bojong, Klapa Nunggal (Kelapa Nunggal)</Link></p>
             </div>
             <div className='md:w-3/5 px-14'>
               <p className='mb-3 md:mb-2'>Temukan Kami</p>
@@ -86,7 +86,20 @@ const Footer = () => {
                       priority
                       className="w-4 h-4 mr-2"
                     />
-                    <p>Tiktok</p>
+                    <p>Tiktok 1</p>
+                  </div>
+                </Link>
+                <Link target='_blank' href="https://www.tiktok.com/@freshmist.official" className="hover:underline">
+                  <div className='flex items-center'>
+                    <Image
+                      src="/assets/tiktok_icon.png" // Path ke gambar di folder public
+                      alt="Tiktok Bikaro Harum Indonesia"
+                      width={200} // Lebar gambar
+                      height={80} // Tinggi gambar
+                      priority
+                      className="w-4 h-4 mr-2"
+                    />
+                    <p>Tiktok 2</p>
                   </div>
                 </Link>
                 <Link target='_blank' href="https://api.whatsapp.com/send?phone=628568790783" className="hover:underline">

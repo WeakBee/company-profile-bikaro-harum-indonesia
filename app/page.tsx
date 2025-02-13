@@ -191,7 +191,7 @@ const AllAnimation = () => {
           }
         });        
         gsap.effects.counter(".moving-number", {
-          end: 400000,
+          end: 500000,
           duration: 2,
           increment: 1,
           ease: "power2.inOut",
@@ -590,7 +590,7 @@ export default function Home() {
                 <Link href="/product?tab=pelicin" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
-                      src="/assets/pelicin-pakaian.png"
+                      src="/assets/pelicin-pakaian-freshmist.png"
                       alt="Pelicin pakaian"
                       className="w-full h-full group-hover:scale-125 transition duration-300"
                       style={{ objectFit: "cover" }}
@@ -603,7 +603,7 @@ export default function Home() {
                 <Link href="/product?tab=detergent" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
-                      src="/assets/detergen.png"
+                      src="/assets/detergen-freshmist.jpeg"
                       alt="Detergen"
                       className="w-full h-full group-hover:scale-125 transition duration-300"
                       style={{ objectFit: "cover" }}
@@ -616,7 +616,7 @@ export default function Home() {
                 <Link href="/product?tab=softener" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
-                      src="/assets/softener.png"
+                      src="/assets/softener-freshmist.png"
                       alt="Softener"
                       className="w-full h-full group-hover:scale-125 transition duration-300"
                       style={{ objectFit: "cover" }}
@@ -629,7 +629,7 @@ export default function Home() {
                 <Link href="/product?tab=sabun" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
                   <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
                     <img
-                      src="/assets/sabun-cuci-piring.png"
+                      src="/assets/sabun-cuci-piring-freshmist.png"
                       alt="Sabun Cuci Piring"
                       className="w-full h-full group-hover:scale-125 transition duration-300"
                       style={{ objectFit: "cover" }}
