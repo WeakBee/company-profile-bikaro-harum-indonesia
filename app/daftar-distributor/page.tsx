@@ -66,8 +66,8 @@ export default function DaftarDistributor() {
                             <p className='text-medium text-2xl mb-2'>Kabupaten Tangerang</p>
                             
                             <div className='' >
-                                <a className='flex items-center text-sm' target='_blank' href="https://id.shp.ee/WXuyDSC"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/shopee_shop_icon.png" alt="Shopee Icon" /> Toko Khanza17</a>
-                                <a className='flex items-center text-sm' target='_blank' href="https://www.tiktok.com/@freshmist.official"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/tiktok_shop_icon.png" alt="Tiktok Shop Icon" /> Toko.Khanza17</a>
+                                <a className='flex items-center text-sm hover:underline' target='_blank' href="https://id.shp.ee/WXuyDSC"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/shopee_shop_icon.png" alt="Shopee Icon" /> Toko Khanza17</a>
+                                <a className='flex items-center text-sm hover:underline' target='_blank' href="https://www.tiktok.com/@freshmist.official"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/tiktok_shop_icon.png" alt="Tiktok Shop Icon" /> Toko.Khanza17</a>
                             </div>
                             <Link href="https://api.whatsapp.com/send?phone=628888372371" className='bg-[#10BB00] flex gap-2 items-center justify-center text-white py-2 my-4 rounded-md transition-all hover:bg-white border border-[#10BB00] hover:text-[#10BB00]'>
                                 <i className="bi bi-whatsapp font-bold ml-2"></i>    
@@ -81,8 +81,8 @@ export default function DaftarDistributor() {
                             </div>
                             <p className='text-medium text-2xl mb-2'>Jakarta Barat</p>
                             <div className='' >
-                                <a className='flex items-center text-sm' target='_blank' href="https://id.shp.ee/WXuyDSC"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/shopee_shop_icon.png" alt="Shopee Icon" /> zaima store </a>
-                                <a className='flex items-center text-sm' target='_blank' href="https://www.tiktok.com/@freshmist.official"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/lazada_shop_icon.png" alt="Lazada Shop Icon" /> zaima store</a>
+                                <a className='flex items-center text-sm hover:underline' target='_blank' href="https://id.shp.ee/WXuyDSC"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/shopee_shop_icon.png" alt="Shopee Icon" /> zaima store </a>
+                                <a className='flex items-center text-sm hover:underline' target='_blank' href="https://www.tiktok.com/@freshmist.official"><img className='w-6 hover:scale-110 transition mr-2' src="/assets/lazada_shop_icon.png" alt="Lazada Shop Icon" /> zaima store</a>
                             </div>
                             <Link href="https://api.whatsapp.com/send?phone=6287885405383" className='bg-[#10BB00] flex gap-2 items-center justify-center text-white py-2 my-4 rounded-md transition-all hover:bg-white border border-[#10BB00] hover:text-[#10BB00]'>
                                 <i className="bi bi-whatsapp font-bold ml-2"></i>    
@@ -90,6 +90,7 @@ export default function DaftarDistributor() {
                             </Link>
                             <p className='text-sm text-justify'>Kp. Baru Simpang 3 No.120 RT.005 RW.08 Kel. Pegadungan Kec. Kalideres, Jakarta Barat Kode Pos : 11830</p>
                         </div>
+                        
                     </div>
                 </div>
             </div>
