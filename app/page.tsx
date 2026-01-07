@@ -7,9 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 import { The_Nautigal } from "next/font/google";
 import Link from "next/link";
-import { categories } from "@/lib/data";
+import { categories, testimonial } from "@/lib/data";
 
-// Coba push lagi
 // Import font The Nautigal
 const theNautigal = The_Nautigal({
   subsets: ["latin"], // Gunakan subset Latin
@@ -262,55 +261,10 @@ const AllAnimation = () => {
   return null;
 };
 
-const cards = [
-  {
-    name: "A**a",
-    time: "Januari, 2025",
-    stars: 5,
-    testimonial: "Paket pengharumnya sangat wangi bener - bener wangi serasa ditempat laundry, disemprotin ke lemari juga biar wangi, makasih ya, next order lg yg varian lain"
-  },
-  {
-    name: "L**y",
-    time: "Oktober, 2024",
-    stars: 5,
-    testimonial: "Wangi segar,pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba."
-  },
-  {
-    name: "M**a",
-    time: "Desember, 2024",
-    stars: 5,
-    testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah."
-  },
-  {
-    name: "D**e",
-    time: "Maret, 2024",
-    stars: 5,
-    testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu."
-  },
-  {
-    name: "A**u",
-    time: "Maret, 2024",
-    stars: 5,
-    testimonial: "Wangi ok ya smg lembut bantu biar baju g kusut hahaha."
-  },
-  {
-    name: "c**a",
-    time: "April, 2024",
-    stars: 5,
-    testimonial: "Paket pewangi udh sampai wanginya enak, blum sy coba buat gosok mudhan tahan lama kayak di londri, toko nya amanah, bang kurir baik sopan udh langganan."
-  },
-  {
-    name: "R**S",
-    time: "Maret, 2024",
-    stars: 5,
-    testimonial: "Alhamdulillah bagus, wanginya kalem, lumayan buat stock slma suka nyetrika, jd semanga buat nyetrika."
-  }
-];
-
 const TestimonialCards = () => {
   return (
     <>
-      {cards.map((card, index) => (
+      {testimonial.map((card, index) => (
         <div key={index} className="card-space px-5">
           <div className="card w-96 h-44 bg-gradient-to-b from-[#EEF4FE] to-[#FFFFFF] shadow-lg rounded-xl px-5 py-3 border-4 border-[#CED4DC]">
             <div className="flex items-center mb-3">

@@ -739,3 +739,48 @@ export const products = [
     description: `Parfum pakaian yang memberikan aroma segar dan tahan lama pada setiap helai kain. Diformulasikan agar wangi menyerap sempurna tanpa meninggalkan noda, membuat pakaian terasa lebih bersih, nyaman, dan menyenangkan saat digunakan. NETTO: 5000 mL`,
   },
 ];
+
+export const testimonial = [
+  {
+    name: "A**a",
+    time: "Januari, 2025",
+    stars: 5,
+    testimonial: "Paket pengharumnya sangat wangi bener - bener wangi serasa ditempat laundry, disemprotin ke lemari juga biar wangi, makasih ya, next order lg yg varian lain"
+  },
+  {
+    name: "L**y",
+    time: "Oktober, 2024",
+    stars: 5,
+    testimonial: "Wangi segar,pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba."
+  },
+  {
+    name: "M**a",
+    time: "Desember, 2024",
+    stars: 5,
+    testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah."
+  },
+  {
+    name: "D**e",
+    time: "Maret, 2024",
+    stars: 5,
+    testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu."
+  },
+  {
+    name: "A**u",
+    time: "Maret, 2024",
+    stars: 5,
+    testimonial: "Wangi ok ya smg lembut bantu biar baju g kusut hahaha."
+  },
+  {
+    name: "c**a",
+    time: "April, 2024",
+    stars: 5,
+    testimonial: "Paket pewangi udh sampai wanginya enak, blum sy coba buat gosok mudhan tahan lama kayak di londri, toko nya amanah, bang kurir baik sopan udh langganan."
+  },
+  {
+    name: "R**S",
+    time: "Maret, 2024",
+    stars: 5,
+    testimonial: "Alhamdulillah bagus, wanginya kalem, lumayan buat stock slma suka nyetrika, jd semanga buat nyetrika."
+  }
+];
