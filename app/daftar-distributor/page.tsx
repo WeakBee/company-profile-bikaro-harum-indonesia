@@ -25,11 +25,11 @@ const AllAnimation = () => {
 const distributors = [
     {
         id: 1,
-        name: "Sumatera Barat",
-        img: "/assets/sumatera-barat.png",
-        alt: "Peta Sumatera Barat",
-        no_wa: "6285278015851",
-        address: "Kampung Lalang jorong bukit Malintang Nagari alahan mati kecamatan Simpang alahan mati kabupaten pasaman provinsi Sumatera Barat",
+        name: "Bogor",
+        img: "/assets/bogor.png",
+        alt: "Peta Bogor",
+        no_wa: "6282111916338",
+        address: "Perum Villa Asri 2 Jl. Baladewa Blok Q No.15 Wanaherang, Gunung putri - Bogor 16965. Telp.021-86869368",
         links: []
     },
     {
@@ -111,8 +111,8 @@ export default function DaftarDistributor() {
                                     <div className='h-[15rem] w-full overflow-hidden rounded-lg group shadow-lg'>
                                         <img className='h-full w-full object-cover group-hover:scale-125 transition' src={e.img} alt={e.alt} />
                                     </div>
-                                    <p className='text-medium text-2xl mb-2'>{e.name}</p>
-                                    {
+                                    <p className='text-medium text-2xl mb-2 mt-4'>{e.name}</p>
+                                    {/* {
                                         e.links.length == 0 ? <div className='md:h-14' /> :
                                             <div className=''>
                                                 {
@@ -121,7 +121,7 @@ export default function DaftarDistributor() {
                                                     ))
                                                 }
                                             </div>
-                                    }
+                                    } */}
                                     <Link href={`https://api.whatsapp.com/send?phone=${e.no_wa}`} className='bg-[#10BB00] flex gap-2 items-center justify-center text-white py-2 my-4 rounded-md transition-all hover:bg-white border border-[#10BB00] hover:text-[#10BB00]'>
                                         <i className="bi bi-whatsapp font-bold ml-2"></i>
                                         <p>Hubungi via Whatsapp</p>

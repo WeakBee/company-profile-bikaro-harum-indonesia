@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 import { The_Nautigal } from "next/font/google";
 import Link from "next/link";
+import { categories } from "@/lib/data";
 
 // Import font The Nautigal
 const theNautigal = The_Nautigal({
@@ -62,16 +63,16 @@ const AllAnimation = () => {
             return tl;
           },
         });
-        
+
         gsap.from(".hero-text-animation ", {
-          opacity:0,
-          y:200,
-          duration:1.3
+          opacity: 0,
+          y: 200,
+          duration: 1.3
         });
         gsap.to(".parallax-hero", {
-          scale: 1.1, 
-          y: 300, 
-          delay:5, 
+          scale: 1.1,
+          y: 300,
+          delay: 5,
           scrollTrigger: {
             trigger: "#hero",
             start: "top top",
@@ -79,11 +80,11 @@ const AllAnimation = () => {
             scrub: true
           }
         });
-        
+
         gsap.from(".motto-text-animation", {
-          opacity:0,
-          y:200,
-          duration:1.3,
+          opacity: 0,
+          y: 200,
+          duration: 1.3,
           scrollTrigger: {
             trigger: "#motto",
             start: "20% 80%",
@@ -92,11 +93,11 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".parallax-motto-1", {
-          x: -250, 
-          opacity:0, 
+          x: -250,
+          opacity: 0,
           rotate: 180,
           yoyo: true,
-          duration:1.1,
+          duration: 1.1,
           scrollTrigger: {
             trigger: "#motto",
             start: "70% bottom",
@@ -105,11 +106,11 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".parallax-motto-2", {
-          x: 250, 
-          opacity:0, 
+          x: 250,
+          opacity: 0,
           rotate: 180,
           yoyo: true,
-          duration:1.1,
+          duration: 1.1,
           scrollTrigger: {
             trigger: "#motto",
             start: "20% 80%",
@@ -118,8 +119,8 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".image-scale-animation-1", {
-          scale:1.5,
-          duration:1.3,
+          scale: 1.5,
+          duration: 1.3,
           scrollTrigger: {
             trigger: ".image-scale-animation-1",
             start: "20% bottom",
@@ -128,9 +129,9 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".text-aos-animation-1", {
-          y:100,
-          opacity:0, 
-          duration:1.3,
+          y: 100,
+          opacity: 0,
+          duration: 1.3,
           scrollTrigger: {
             trigger: ".text-aos-animation-1",
             start: "top 80%",
@@ -139,8 +140,8 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".image-scale-animation-2", {
-          scale:1.5,
-          duration:1.3,
+          scale: 1.5,
+          duration: 1.3,
           scrollTrigger: {
             trigger: ".image-scale-animation-2",
             start: "top 80%",
@@ -149,8 +150,8 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".image-scale-animation-3", {
-          scale:1.5,
-          duration:1.3,
+          scale: 1.5,
+          duration: 1.3,
           scrollTrigger: {
             trigger: ".image-scale-animation-3",
             start: "top 80%",
@@ -159,8 +160,8 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".image-scale-animation-4", {
-          scale:1.5,
-          duration:1.3,
+          scale: 1.5,
+          duration: 1.3,
           scrollTrigger: {
             trigger: ".image-scale-animation-4",
             start: "top 80%",
@@ -169,9 +170,9 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".text-aos-animation-2", {
-          y:100,
-          opacity:0, 
-          duration:1.3,
+          y: 100,
+          opacity: 0,
+          duration: 1.3,
           scrollTrigger: {
             trigger: ".text-aos-animation-2",
             start: "top 80%",
@@ -180,18 +181,18 @@ const AllAnimation = () => {
           }
         });
         gsap.from(".text-aos-animation-3", {
-          y:100,
-          opacity:0, 
-          duration:1.3,
+          y: 100,
+          opacity: 0,
+          duration: 1.3,
           scrollTrigger: {
             trigger: ".text-aos-animation-3",
             start: "top 70%",
             end: "top 70%",
             toggleActions: "restart none reset reset",
           }
-        });        
+        });
         gsap.effects.counter(".moving-number", {
-          end: 500000,
+          end: 1000000,
           duration: 2,
           increment: 1,
           ease: "power2.inOut",
@@ -201,27 +202,27 @@ const AllAnimation = () => {
             end: "top 70%",
             toggleActions: "restart none reset reset",
           }
-        });          
+        });
         gsap.from(".group-gelembung-1", {
-          y: 200, 
+          y: 200,
           scrollTrigger: {
             trigger: "#produk-kami",
             start: "30% bottom",
             end: "110% bottom",
             scrub: true
           }
-        });       
+        });
         gsap.from(".group-gelembung-2", {
-          y: 200, 
+          y: 200,
           scrollTrigger: {
             trigger: "#produk-kami",
             start: "65% bottom",
             end: "140% bottom",
             scrub: true
           }
-        });       
+        });
         gsap.from(".group-gelembung-3", {
-          y: 200, 
+          y: 200,
           scrollTrigger: {
             trigger: "#produk-kami",
             start: "65% bottom",
@@ -231,9 +232,9 @@ const AllAnimation = () => {
         });
         gsap.from(".parallax-peta", {
           scale: 1.4,
-          y: -50, 
-          rotate:-10,
-          duration:1.4,
+          y: -50,
+          rotate: -10,
+          duration: 1.4,
           scrollTrigger: {
             trigger: "#produk-terjual",
             start: "top bottom",
@@ -261,47 +262,47 @@ const AllAnimation = () => {
 };
 
 const cards = [
-    {
-      name: "A**a",
-      time: "Januari, 2025",
-      stars: 5,
-      testimonial: "Paket pengharumnya sangat wangi bener - bener wangi serasa ditempat laundry, disemprotin ke lemari juga biar wangi, makasih ya, next order lg yg varian lain"
+  {
+    name: "A**a",
+    time: "Januari, 2025",
+    stars: 5,
+    testimonial: "Paket pengharumnya sangat wangi bener - bener wangi serasa ditempat laundry, disemprotin ke lemari juga biar wangi, makasih ya, next order lg yg varian lain"
   },
   {
-      name: "L**y",
-      time: "Oktober, 2024",
-      stars: 5,
-      testimonial: "Wangi segar,pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba."
+    name: "L**y",
+    time: "Oktober, 2024",
+    stars: 5,
+    testimonial: "Wangi segar,pengemasannya baik, pengirimannya cepat sekali pesan kemarin, hari ini sudah tiba."
   },
   {
-      name: "M**a",
-      time: "Desember, 2024",
-      stars: 5,
-      testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah."
+    name: "M**a",
+    time: "Desember, 2024",
+    stars: 5,
+    testimonial: "Wanginya enak banget pengiriman cepat aman tidak ada yg bocor harga murah."
   },
   {
-      name: "D**e",
-      time: "Maret, 2024",
-      stars: 5,
-      testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu."
+    name: "D**e",
+    time: "Maret, 2024",
+    stars: 5,
+    testimonial: "Wanginya enak banget, rekomendasi seller dan produk sukses selalu."
   },
   {
-      name: "A**u",
-      time: "Maret, 2024",
-      stars: 5,
-      testimonial: "Wangi ok ya smg lembut bantu biar baju g kusut hahaha."
+    name: "A**u",
+    time: "Maret, 2024",
+    stars: 5,
+    testimonial: "Wangi ok ya smg lembut bantu biar baju g kusut hahaha."
   },
   {
-      name: "c**a",
-      time: "April, 2024",
-      stars: 5,
-      testimonial: "Paket pewangi udh sampai wanginya enak, blum sy coba buat gosok mudhan tahan lama kayak di londri, toko nya amanah, bang kurir baik sopan udh langganan."
+    name: "c**a",
+    time: "April, 2024",
+    stars: 5,
+    testimonial: "Paket pewangi udh sampai wanginya enak, blum sy coba buat gosok mudhan tahan lama kayak di londri, toko nya amanah, bang kurir baik sopan udh langganan."
   },
   {
-      name: "R**S",
-      time: "Maret, 2024",
-      stars: 5,
-      testimonial: "Alhamdulillah bagus, wanginya kalem, lumayan buat stock slma suka nyetrika, jd semanga buat nyetrika."
+    name: "R**S",
+    time: "Maret, 2024",
+    stars: 5,
+    testimonial: "Alhamdulillah bagus, wanginya kalem, lumayan buat stock slma suka nyetrika, jd semanga buat nyetrika."
   }
 ];
 
@@ -460,7 +461,7 @@ export default function Home() {
         />
         <div className='w-full h-full absolute top-0 left-0 -z-10 bg-[#D3D3D3]/70 '></div>
         <div className="container mx-auto px-5 xl:px-20 pt-20">
-          <h1 className='hero-text-animation text-4xl md:text-6xl leading-[3rem] md:leading-[4.5rem] font-medium text-center md:text-left mt-32'>Kesegaran, Kebersihan,<br className="hidden md:block"/> dan Kualitas Terbaik<br className="hidden md:block" /> dalam Satu <span className={`${theNautigal.className} text-5xl md:text-7xl`}> Genggaman</span></h1>
+          <h1 className='hero-text-animation text-4xl md:text-6xl leading-[3rem] md:leading-[4.5rem] font-medium text-center md:text-left mt-32'>Kesegaran, Kebersihan,<br className="hidden md:block" /> dan Kualitas Terbaik<br className="hidden md:block" /> dalam Satu <span className={`${theNautigal.className} text-5xl md:text-7xl`}> Genggaman</span></h1>
         </div>
       </div>
 
@@ -483,13 +484,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       <div id='special' className="relative bg-white overflow-hidden">
         <div className='relative top-0 left-0 w-full'>
           <div className="container relative mx-auto h-full px-0 xl:px-20 pt-10 pb-[7rem]">
             <h1 className='ml-2 text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>Apa yang spesial dari</h1>
             <h1 className='ml-2 text-2xl md:text-6xl md:leading-[5.5rem] font-semibold'>produk kami?</h1>
-            
+
             <div className="relative mt-10">
               <div className="w-2/3 md:w-[37rem] md:h-[37rem] overflow-hidden">
                 <img
@@ -506,7 +507,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             <div className="relative mt-[15rem] md:mt-[10rem]">
               <div className="flex justify-end w-full">
                 <div className="w-2/3 md:w-[42rem] md:h-[42rem] overflow-hidden">
@@ -525,7 +526,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             <div className="relative mt-[10rem]">
               <div className="flex justify-end w-full">
                 <div className="w-2/3 md:w-[38rem] md:h-[38rem] overflow-hidden">
@@ -565,83 +566,55 @@ export default function Home() {
             <Link href="/product" className="text-gray-500 underline md:ml-auto">Lihat Semua Produk</Link>
           </div>
         </div>
-        
-        <div className="w-full overflow-hidden relative pb-20"> 
-            <img
-              src="/assets/group-gelembung-1.png"
-              alt="Gelembung"
-              className="w-full h-full absolute -bottom-10 left-0 group-gelembung-1"
-              style={{ objectFit: "contain" }}
-            />
-            <img
-              src="/assets/group-gelembung-2.png"
-              alt="Gelembung"
-              className="w-full h-full absolute -bottom-24 left-0 group-gelembung-2"
-              style={{ objectFit: "contain" }}
-            />
-            <img
-              src="/assets/group-gelembung-3.png"
-              alt="Gelembung"
-              className="w-full h-full absolute -bottom-24 left-0 group-gelembung-3"
-              style={{ objectFit: "contain" }}
-            />
-            <div className="draggable-container cursor-grab w-max pl-[45rem] -left-[43rem] md:pl-[20rem] md:-left-[10rem] 2xl:pl-[3rem] 2xl:-left-[1rem] pb-14 relative ">
-              <div className="draggable-slide w-fit flex gap-5">
-                <Link href="/product?tab=pelicin" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
-                    <img
-                      src="/assets/pelicin-pakaian-freshmist.png"
-                      alt="Pelicin pakaian"
-                      className="w-full h-full group-hover:scale-125 transition duration-300"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
-                    <p className="">PELICIN <br></br> PAKAIAN</p>
-                  </div>
-                </Link>
-                <Link href="/product?tab=detergent" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
-                    <img
-                      src="/assets/detergen-freshmist.jpeg"
-                      alt="Detergen"
-                      className="w-full h-full group-hover:scale-125 transition duration-300"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
-                    <p className="">DETERGEN</p>
-                  </div>
-                </Link>
-                <Link href="/product?tab=softener" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
-                    <img
-                      src="/assets/softener-freshmist.png"
-                      alt="Softener"
-                      className="w-full h-full group-hover:scale-125 transition duration-300"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
-                    <p className="">SOFTENER</p>
-                  </div>
-                </Link>
-                <Link href="/product?tab=sabun" className="group cursor-grab w-[15rem] md:w-80 overflow-hidden rounded-lg shadow-xl">
-                  <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
-                    <img
-                      src="/assets/sabun-cuci-piring-freshmist.png"
-                      alt="Sabun Cuci Piring"
-                      className="w-full h-full group-hover:scale-125 transition duration-300"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                  <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
-                    <p className="">SABUN CUCI PIRING</p>
-                  </div>
-                </Link>
-              </div>
+
+        <div className="w-full overflow-hidden relative pb-20">
+          <img
+            src="/assets/group-gelembung-1.png"
+            alt="Gelembung"
+            className="w-full h-full absolute -bottom-10 left-0 group-gelembung-1"
+            style={{ objectFit: "contain" }}
+          />
+          <img
+            src="/assets/group-gelembung-2.png"
+            alt="Gelembung"
+            className="w-full h-full absolute -bottom-24 left-0 group-gelembung-2"
+            style={{ objectFit: "contain" }}
+          />
+          <img
+            src="/assets/group-gelembung-3.png"
+            alt="Gelembung"
+            className="w-full h-full absolute -bottom-24 left-0 group-gelembung-3"
+            style={{ objectFit: "contain" }}
+          />
+          <div className="draggable-container cursor-grab pb-14">
+            <div className="draggable-slide w-fit px-10 flex gap-5">
+              {
+                categories.map((e) => {
+                  return (
+                    <Link 
+                      href={e.link} 
+                      className="group cursor-grab w-[15rem] md:w-80 
+                        overflow-hidden rounded-lg shadow-xl"
+                      key={e.id}>
+                      <div className="w-full h-[20rem] md:h-[27rem] overflow-hidden">
+                        <img
+                          src={e.urlImg}
+                          alt={e.altImg}
+                          className="w-full h-full group-hover:scale-125 transition duration-300"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                      <div className="bg-[#06246C] h-[7rem] flex items-center text-white py-3 px-4 text-3xl font-medium leading-[2.6rem]">
+                        <p className="">{e.title}</p>
+                      </div>
+                    </Link>
+                  )
+                })
+              }
+
             </div>
           </div>
+        </div>
       </div>
 
       <div id='produk-terjual' className='relative top-0 left-0 w-full h-[26rem] md:h-[41rem] flex justify-center overflow-hidden'>
