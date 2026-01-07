@@ -9,6 +9,7 @@ import { The_Nautigal } from "next/font/google";
 import Link from "next/link";
 import { categories } from "@/lib/data";
 
+// Coba push lagi
 // Import font The Nautigal
 const theNautigal = The_Nautigal({
   subsets: ["latin"], // Gunakan subset Latin
